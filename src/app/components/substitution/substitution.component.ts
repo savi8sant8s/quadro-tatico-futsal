@@ -10,6 +10,8 @@ import { PlayerType } from 'src/app/types/player.type';
 export class SubstitutionComponent implements OnInit {
   players: Array<PlayerType> = new Array<PlayerType>();
 
+  playersSelected: Array<PlayerType> = new Array<PlayerType>();
+
   constructor(
     private modal: ModalController
   ) {
@@ -32,11 +34,28 @@ export class SubstitutionComponent implements OnInit {
   async closeModal(){
     await this.modal.dismiss();
   }
-  async confirmOption(){
-    await this.modal.dismiss();
+
+  async selectPlayer(player){
+     if (this.playersSelected.includes(player)) {
+      this.playersSelected.splice(this.playersSelected.indexOf(player), 1);
+    } else {
+      if (this.playersSelected.length === 2) {
+        this.playersSelected.pop();
+      }
+      this.playersSelected.push(player);
+    }
   }
 
-  soccerEscalation(position){
-    return position < 5 ? 'Titular': 'Reserva';
+  isSelected(player){
+    return this.playersSelected.includes(player);
+  }
+
+  async substitute(){
+    const player1Index = this.players.indexOf(this.playersSelected[0]);
+    const player2Index = this.players.indexOf(this.playersSelected[1]);
+    const aux = this.players[player1Index];
+    this.players[player1Index] = this.players[player2Index];
+    this.players[player2Index] = aux;
+    this.playersSelected = new Array<PlayerType>();
   }
 }
