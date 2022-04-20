@@ -3,3 +3,12 @@
     align-items: flex-end;
     justify-content: flex-end;
 }
+
+ion-list {
+    overflow-y: scroll;
+    max-height: 60vh;
+}
+
+.selected {
+    color: blue;
+}
