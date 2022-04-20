@@ -42,9 +42,15 @@ export class FutsalPlayerComponent implements AfterViewInit, OnInit{
       threshold: 0,
       gestureName: 'move',
       onMove: ev => {
+        this.player.nativeElement.style.background = 'lightblue';
+        this.player.nativeElement.style.borderColor = 'gold';
         const { x, y } = this.getValidPosition(width, height, ev.currentX, ev.currentY);
         this.setNewPosition(x, y);
       },
+      onEnd: _ev => {
+        this.player.nativeElement.style.background = '';
+        this.player.nativeElement.style.borderColor = '';
+      }
     });
     moveGesture.enable(true);
   }
