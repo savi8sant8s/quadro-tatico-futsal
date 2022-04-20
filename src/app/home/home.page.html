@@ -1,6 +1,7 @@
 <app-options-panel></app-options-panel>
-<ion-content>
+<ion-content [scrollY]="false">
   <app-futsal-court></app-futsal-court>
-  <app-futsal-player></app-futsal-player>
+  <app-futsal-player theme="1" *ngFor="let player of team1" [x]="player.x" [y]="player.y"></app-futsal-player>
+  <app-futsal-player theme="2" *ngFor="let player of team2" [x]="player.x" [y]="player.y"></app-futsal-player>
 </ion-content>
 <app-options-panel></app-options-panel>

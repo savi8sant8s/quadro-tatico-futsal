@@ -1,7 +1,18 @@
 .player {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
     width: 3rem;
     height: 3rem;
     border-radius: 100%;
+}
+
+.color-1 {
     border: 0.5rem solid var(--ion-color-orange);
     background: var(--ion-color-strong-orange);
+}
+
+.color-2 {
+    border: 0.5rem solid var(--ion-color-strong-orange);
+    background: var(--ion-color-orange);
 }

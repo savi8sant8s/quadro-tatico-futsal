@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { OptionsType } from '../../types/options.type';
+import { OptionType } from '../../types/option.type';
 import { FormationComponent } from '../formation/formation.component';
 import { SettingsComponent } from '../settings/settings.component';
 import { SubstitutionComponent } from '../substitution/substitution.component';
@@ -11,7 +11,7 @@ import { SubstitutionComponent } from '../substitution/substitution.component';
   styleUrls: ['./options-panel.component.scss'],
 })
 export class OptionsPanelComponent {
-  options: Array<OptionsType> = new Array<OptionsType>();
+  options: Array<OptionType> = new Array<OptionType>();
 
   constructor(
     private modalCtrl: ModalController
