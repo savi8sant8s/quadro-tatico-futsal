@@ -1,3 +1,14 @@
-<p>
-  substitution works!
-</p>
+<ion-content class="ion-padding">
+  <div (click)="closeModal()" class="close-modal">
+    <ion-icon size="large" name="close-circle-outline"></ion-icon>
+  </div>
+  <h3 class="ion-text-center">Substituição:</h3>
+  <ion-reorder-group disabled="false">
+    <ion-reorder *ngFor="let player of players, let i = index">
+      <ion-item>
+        <ion-label>{{player.name}}</ion-label>
+        <ion-note>{{soccerEscalation(i)}}</ion-note>
+      </ion-item>
+    </ion-reorder>
+  </ion-reorder-group>
+</ion-content>

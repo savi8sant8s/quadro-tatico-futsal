@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
-import { FormationComponent } from '../components/formation/formation.component';
-import { PlayerType } from '../types/player.type';
+import { SubstitutionComponent } from '../components/substitution/substitution.component';
+import { PlayerPositionType } from '../types/player-position.type';
 
 @Component({
   selector: 'app-home',
@@ -11,8 +11,8 @@ import { PlayerType } from '../types/player.type';
 export class HomePage {
   width: number;
   height: number;
-  team1: Array<PlayerType> = new Array<PlayerType>();
-  team2: Array<PlayerType> = new Array<PlayerType>();
+  team1: Array<PlayerPositionType> = new Array<PlayerPositionType>();
+  team2: Array<PlayerPositionType> = new Array<PlayerPositionType>();
 
   constructor(
     private platform: Platform,
@@ -40,7 +40,7 @@ export class HomePage {
 
   async ionViewWillEnter(){
     const modal = await this.modal.create({
-      component: FormationComponent,
+      component: SubstitutionComponent,
     });
     modal.present();
   }

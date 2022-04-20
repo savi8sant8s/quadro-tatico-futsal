@@ -29,8 +29,4 @@ export class FormationComponent implements OnInit {
   selectFormation(name){
     this.formationSelected = name;
   }
-
-  async confirmOption(){
-    await this.modal.dismiss(this.formationSelected);
-  }
 }

@@ -5,11 +5,10 @@
   <h3>Selecione uma formação:</h3>
   <ion-grid>
     <ion-row>
-      <ion-col class="ion-text-center" *ngFor="let formation of formations" size="6">
+      <ion-col size="6" class="ion-text-center" *ngFor="let formation of formations" size="6">
         <img width="100px" class="formation" (click)="selectFormation(formation.name)" [ngClass]="{'selected': formation.name === formationSelected}" [src]="formation.imageUrl" />
         <p>{{formation.name}}</p>
       </ion-col>
     </ion-row>
   </ion-grid>
-  <ion-button expand="block" (click)="confirmOption()">Confirmar</ion-button>
 </ion-content>
