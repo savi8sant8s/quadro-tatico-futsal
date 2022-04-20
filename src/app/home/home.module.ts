@@ -8,6 +8,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { OptionsPanelComponent } from '../components/options-panel/options-panel.component';
 import { FutsalCourtComponent } from '../components/futsal-court/futsal-court.component';
 import { FutsalPlayerComponent } from '../components/futsal-player/futsal-player.component';
+import { FormationComponent } from '../components/formation/formation.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { FutsalPlayerComponent } from '../components/futsal-player/futsal-player
     HomePage,
     OptionsPanelComponent,
     FutsalCourtComponent,
-    FutsalPlayerComponent
+    FutsalPlayerComponent,
+    FormationComponent
 ]
 })
 export class HomePageModule {}

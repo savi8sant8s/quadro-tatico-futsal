@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Platform } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
+import { FormationComponent } from '../components/formation/formation.component';
 import { PlayerType } from '../types/player.type';
 
 @Component({
@@ -14,7 +15,8 @@ export class HomePage {
   team2: Array<PlayerType> = new Array<PlayerType>();
 
   constructor(
-    private platform: Platform
+    private platform: Platform,
+    private modal: ModalController
   ) {
     this.platform.ready().then(() => {
       this.width = this.platform.width();
@@ -34,5 +36,12 @@ export class HomePage {
     this.team2.push({ x: this.width * 0.75, y: this.height * 0.35});
     this.team2.push({ x: this.width * 0.5, y: this.height * 0.3 });
     this.team2.push({ x: this.width * 0.5, y: this.height * 0.4 });
+  }
+
+  async ionViewWillEnter(){
+    const modal = await this.modal.create({
+      component: FormationComponent,
+    });
+    modal.present();
   }
 }
