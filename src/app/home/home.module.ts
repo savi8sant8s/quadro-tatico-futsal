@@ -7,6 +7,7 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { OptionsPanelComponent } from '../components/options-panel/options-panel.component';
 import { FutsalCourtComponent } from '../components/futsal-court/futsal-court.component';
+import { FutsalPlayerComponent } from '../components/futsal-player/futsal-player.component';
 
 
 @NgModule({
@@ -16,6 +17,11 @@ import { FutsalCourtComponent } from '../components/futsal-court/futsal-court.co
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage, OptionsPanelComponent, FutsalCourtComponent]
+  declarations: [
+    HomePage,
+    OptionsPanelComponent,
+    FutsalCourtComponent,
+    FutsalPlayerComponent
+]
 })
 export class HomePageModule {}
