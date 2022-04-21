@@ -24,3 +24,62 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+@font-face {   
+    font-family: 'Oswald-Regular';
+    src: url('./assets/fonts/Oswald-Regular.ttf');
+}
+
+ion-content{ 
+    font-family: 'Oswald-Regular' !important;
+}
+
+.bg-theme {
+    &-1{
+        --background: var(--ion-color-green);
+        background: var(--ion-color-green);
+    }
+    &-2{
+        --background: var(--ion-color-yellow);
+        background: var(--ion-color-yellow);
+    }
+    &-3{
+        --background: var(--ion-color-orange);
+        background: var(--ion-color-orange);
+    }
+    &-4{
+        --background: var(--ion-color-black);
+        background: var(--ion-color-black);
+    }
+    &-5{
+        --background: var(--ion-color-gray);
+        background: var(--ion-color-gray);
+    }
+    &-6{
+        --background: var(--ion-color-black);
+        background: var(--ion-color-black);
+    }
+}
+
+@mixin player-theme-border{
+    border: 0.2rem solid var(--ion-color-white);
+}
+
+.player-theme {
+    &-1 {
+        background: var(--ion-color-green);
+        @include player-theme-border;
+    }
+    &-2 {
+        background: var(--ion-color-yellow);
+        @include player-theme-border;
+    }
+    &-3 {
+        background: var(--ion-color-orange);
+        @include player-theme-border;
+    }
+    &-4 {
+        background: var(--ion-color-black);
+        @include player-theme-border;
+    }
+}

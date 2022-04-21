@@ -1,0 +1,16 @@
+<ion-content class="bg-theme-6 ion-padding">
+  <div (click)="onClose()" class="ion-text-end">
+    {{'BACK' | translate}}
+  </div>
+  <h3 class="ion-text-center">{{'PLAYER_THEME_TITLE' | translate}}</h3>
+  <h6>{{'TEAM_A' | translate}}</h6>
+  <div class="container">
+    <div *ngFor="let playerTheme of playerThemes" (click)="onSelect('a', playerTheme)" [class]="playerTheme.cssClass" class="player" [ngClass]="{'selected': playerTheme.cssClass === playerThemeTeamA.cssClass}">
+    </div>
+  </div>
+  <h6>{{'TEAM_B' | translate}}</h6>
+  <div class="container">
+      <div *ngFor="let playerTheme of playerThemes" (click)="onSelect('b', playerTheme)" [class]="playerTheme.cssClass" class="player" [ngClass]="{'selected': playerTheme.cssClass === playerThemeTeamB.cssClass}">
+      </div>
+  </div>
+</ion-content>

@@ -1,36 +1,45 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { FormationType } from 'src/app/types/formation.type';
-
+import { IClose } from 'src/app/interfaces/close.interface';
+import { ISelect } from 'src/app/interfaces/select.interface';
+import { TeamId } from '../../enums/team-id.enum';
+import { FormationService } from '../../services/formation/formation.service';
+import { Formation } from '../../types/formation.type';
 @Component({
   selector: 'app-formation',
   templateUrl: './formation.component.html',
   styleUrls: ['./formation.component.scss'],
 })
-export class FormationComponent implements OnInit {
-  formations: Array<FormationType> = new Array<FormationType>();
-  formationSelected = '1-2-2';
+export class FormationComponent implements IClose, ISelect{
+  formationTeamA: Formation;
+  formationTeamB: Formation;
+  formations: Array<Formation> = new Array<Formation>();
 
   constructor(
-    private modal: ModalController
+    private formationService: FormationService,
+    private modalCtrl: ModalController,
   ) {
-    this.formations.push({name: '1-2-2',   imageUrl: 'assets/1-2-2.svg'});
-    this.formations.push({name: '1-3-1',   imageUrl: 'assets/1-3-1.svg'});
-    this.formations.push({name: '1-1-2-1',   imageUrl: 'assets/1-1-2-1.svg'});
-    this.formations.push({name: '1-1-1-2',   imageUrl: 'assets/1-1-1-2.svg'});
    }
 
-  ngOnInit() {}
-
-  async closeModal(){
-    await this.modal.dismiss();
+  async ionViewWillEnter() {
+    this.formations = this.formationService.getFormations();
+    this.formationTeamA = await this.formationService.getFormationPreferences(TeamId.a);
+    this.formationTeamB = await this.formationService.getFormationPreferences(TeamId.b);
   }
 
-  selectFormation(name){
-    this.formationSelected = name;
+  async onClose(){
+    await this.modalCtrl.dismiss();
   }
 
-  async confirmOption(){
-    await this.modal.dismiss(this.formationSelected);
+  onSelect(team, formation){
+    if (team === 'a'){
+      this.formationTeamA = formation;
+      team = TeamId.a;
+    }
+    else if (team === 'b'){
+      this.formationTeamB = formation;
+      team = TeamId.b;
+    }
+    this.formationService.setFormationPreferences(team, formation);
   }
 }

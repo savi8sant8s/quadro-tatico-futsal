@@ -1,14 +1,24 @@
-.close-modal {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-}
-
 .formation {
-    background: white;
+    background: var(--ion-color-white);
     border-radius: 5%;
+    opacity: 0.4;
 }
 
 .selected {
-    background: blue;
+    border: 0.4rem solid var(--ion-color-white);
+    opacity: 1;
+}
+
+.d-flex {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    span {
+        margin-left: 1rem;
+    }
+}
+
+.rotate {
+    transform: rotate(180deg);
 }

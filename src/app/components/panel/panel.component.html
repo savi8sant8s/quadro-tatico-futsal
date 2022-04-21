@@ -1,0 +1,11 @@
+<ion-header class="ion-text-center">
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let option of options">
+          <img (click)="onOpenModal(option.component)" [src]="option.imageUrl"/>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
