@@ -1,4 +1,4 @@
-export type FormationType = {
+export type Formation = {
     name: string;
     imageUrl: string;
 };

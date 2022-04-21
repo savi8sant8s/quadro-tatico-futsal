@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { OptionType } from '../../types/option.type';
+import { Option } from '../../types/option.type';
 import { FormationComponent } from '../formation/formation.component';
 import { SettingsComponent } from '../settings/settings.component';
 
@@ -11,7 +11,7 @@ import { SettingsComponent } from '../settings/settings.component';
 })
 export class OptionsPanelComponent implements OnInit{
   @Input() playerOptions = false;
-  options: Array<OptionType> = new Array<OptionType>();
+  options: Array<Option> = new Array<Option>();
 
   constructor(
     private modalCtrl: ModalController
@@ -23,7 +23,7 @@ export class OptionsPanelComponent implements OnInit{
       this.options.push({imageUrl: 'assets/formacao.svg', component: FormationComponent});
       this.options.push({imageUrl: 'assets/ajustes.svg', component: SettingsComponent});
     } else {
-      this.options.push({imageUrl: 'assets/salvar.svg', component: null});
+      this.options.push({imageUrl: 'assets/quadra.svg', component: null});
       this.options.push({imageUrl: 'assets/mais.svg', component: null});
     }
    }

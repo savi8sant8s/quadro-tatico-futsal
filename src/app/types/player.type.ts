@@ -1,3 +1,3 @@
-export type PlayerType = {
+export type Player = {
     name: string;
 };
