@@ -1,8 +1,8 @@
 <ion-content class="bg-theme-6 ion-padding">
   <div class="ion-text-end" (click)="onClose()">
-    Voltar
+    {{'BACK' | translate}}
   </div>
-  <h3 class="ion-text-center">Selecione a cor da quadra:</h3>
+  <h3 class="ion-text-center">{{'COURT_THEME_TITLE' | translate}}</h3>
   <div class="container" *ngFor="let courtTheme of courtThemes">
     <div (click)="onSelect(courtTheme)" [class]="courtTheme.cssClass" class="court" [ngClass]="{'selected': courtTheme.cssClass === courtThemeSelected.cssClass}"></div>
   </div>

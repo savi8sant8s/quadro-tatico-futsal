@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { IClose } from 'src/app/interfaces/close.interface';
+import { ISelect } from 'src/app/interfaces/select.interface';
 import { TeamId } from '../../enums/team-id.enum';
 import { FormationService } from '../../services/formation/formation.service';
 import { Formation } from '../../types/formation.type';
@@ -8,7 +10,7 @@ import { Formation } from '../../types/formation.type';
   templateUrl: './formation.component.html',
   styleUrls: ['./formation.component.scss'],
 })
-export class FormationComponent {
+export class FormationComponent implements IClose, ISelect{
   formationTeamA: Formation;
   formationTeamB: Formation;
   formations: Array<Formation> = new Array<Formation>();

@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { TeamId } from '../enums/team-id.enum';
-import { CourtThemeService } from '../services/court-theme/court-theme.service';
-import { EventsService } from '../services/events/events.service';
-import { PositionsService } from '../services/positions/positions.service';
-import { FormationService } from '../services/formation/formation.service';
-import { PlayerThemeService } from '../services/player-theme/player-theme.service';
-import { FormationPositions } from '../types/formation-positions.type';
-import { Theme } from '../types/theme.type';
+import { TeamId } from '../../enums/team-id.enum';
+import { CourtThemeService } from '../../services/court-theme/court-theme.service';
+import { EventsService } from '../../services/events/events.service';
+import { PositionsService } from '../../services/positions/positions.service';
+import { FormationService } from '../../services/formation/formation.service';
+import { PlayerThemeService } from '../../services/player-theme/player-theme.service';
+import { FormationPositions } from '../../types/formation-positions.type';
+import { Theme } from '../../types/theme.type';
 
 @Component({
   selector: 'app-home',

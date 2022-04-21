@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { IClose } from 'src/app/interfaces/close.interface';
+import { ISelect } from 'src/app/interfaces/select.interface';
 import { Theme } from 'src/app/types/theme.type';
 import { CourtThemeService } from '../../services/court-theme/court-theme.service';
 
@@ -8,7 +10,7 @@ import { CourtThemeService } from '../../services/court-theme/court-theme.servic
   templateUrl: './court-theme.component.html',
   styleUrls: ['./court-theme.component.scss'],
 })
-export class CourtThemeComponent {
+export class CourtThemeComponent implements IClose, ISelect{
   courtThemes: Array<Theme> = new Array<Theme>();
   courtThemeSelected: Theme;
 

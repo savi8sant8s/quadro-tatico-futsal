@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { OptionsPanelComponent } from './options-panel.component';
+import { MoreComponent } from './more.component';
 
-describe('OptionsPanelComponent', () => {
-  let component: OptionsPanelComponent;
-  let fixture: ComponentFixture<OptionsPanelComponent>;
+describe('MoreComponent', () => {
+  let component: MoreComponent;
+  let fixture: ComponentFixture<MoreComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ OptionsPanelComponent ],
+      declarations: [ MoreComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(OptionsPanelComponent);
+    fixture = TestBed.createComponent(MoreComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
