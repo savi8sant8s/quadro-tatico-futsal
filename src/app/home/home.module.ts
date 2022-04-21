@@ -6,7 +6,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { OptionsPanelComponent } from '../components/options-panel/options-panel.component';
-import { FutsalPlayerComponent } from '../components/futsal-player/futsal-player.component';
+import { PlayerComponent } from '../components/player/player.component';
 import { FormationComponent } from '../components/formation/formation.component';
 import { PlayerThemeComponent } from '../components/player-theme/player-theme.component';
 import { CourtThemeComponent } from '../components/court-theme/court-theme.component';
@@ -24,7 +24,7 @@ import { CourtComponent } from '../components/court/court.component';
     HomePage,
     OptionsPanelComponent,
     CourtComponent,
-    FutsalPlayerComponent,
+    PlayerComponent,
     FormationComponent,
     PlayerThemeComponent,
     CourtThemeComponent

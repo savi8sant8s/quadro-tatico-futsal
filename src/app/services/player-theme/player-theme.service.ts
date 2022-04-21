@@ -13,10 +13,10 @@ export class PlayerThemeService {
   constructor(
     private eventsService: EventsService
   ) {
-    this.playerThemes.push({color: 'blue',   borderColor: 'white'});
-    this.playerThemes.push({color: 'red',   borderColor: 'orange'});
-    this.playerThemes.push({color: 'yellow',   borderColor: 'black'});
-    this.playerThemes.push({color: 'green',   borderColor: 'purple'});
+    this.playerThemes.push({cssClass: 'player-theme-1'});
+    this.playerThemes.push({cssClass: 'player-theme-2'});
+    this.playerThemes.push({cssClass: 'player-theme-3'});
+    this.playerThemes.push({cssClass: 'player-theme-4'});
   }
 
   getPlayerThemes(): Array<Theme> {

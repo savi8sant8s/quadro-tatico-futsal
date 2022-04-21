@@ -34,18 +34,7 @@ ion-content{
     font-family: 'Oswald-Regular' !important;
 }
 
-.close-modal {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-}
-
-.divider {
-    border-bottom: 0.25rem solid yellow;
-    width: 100%;
-}
-
-.court-theme {
+.bg-theme {
     &-1{
         --background: var(--ion-color-green);
         background: var(--ion-color-green);
@@ -66,10 +55,31 @@ ion-content{
         --background: var(--ion-color-gray);
         background: var(--ion-color-gray);
     }
+    &-6{
+        --background: var(--ion-color-black);
+        background: var(--ion-color-black);
+    }
 }
 
-.modal {
-    --height: 80%;
-    display: flex;
-    align-items: flex-end;
+@mixin player-theme-border{
+    border: 0.2rem solid var(--ion-color-white);
+}
+
+.player-theme {
+    &-1 {
+        background: var(--ion-color-green);
+        @include player-theme-border;
+    }
+    &-2 {
+        background: var(--ion-color-yellow);
+        @include player-theme-border;
+    }
+    &-3 {
+        background: var(--ion-color-orange);
+        @include player-theme-border;
+    }
+    &-4 {
+        background: var(--ion-color-black);
+        @include player-theme-border;
+    }
 }

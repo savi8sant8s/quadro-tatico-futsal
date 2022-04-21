@@ -1,18 +1,17 @@
-<ion-content class="ion-padding">
-  <div (click)="onClose()" class="close-modal">
-    <ion-icon size="large" name="close-circle-outline"></ion-icon>
+<ion-content class="bg-theme-6 ion-padding">
+  <div class="ion-text-end" (click)="onClose()">
+    Voltar
   </div>
-  <h3>Selecione uma formação:</h3>
+  <h3 class="ion-text-center">Selecione uma formação:</h3>
   <h6>Time A</h6>
   <ion-grid>
-    <ion-row >
+    <ion-row>
       <ion-col size="6" class="ion-text-center d-flex" *ngFor="let formation of formations" size="6">
-        <img width="75px" class="formation" (click)="onSelect('a', formation)" [ngClass]="{'selected': formation.name === formationTeamA.name}" [src]="formation.imageUrl" />
+        <img width="75px" class="formation rotate" (click)="onSelect('a', formation)" [ngClass]="{'selected': formation.name === formationTeamA.name}" [src]="formation.imageUrl" />
         <span>{{formation.name}}</span>
       </ion-col>
     </ion-row>
   </ion-grid>
-  <div class="divider"></div>
   <h6>Time B</h6>
   <ion-grid>
     <ion-row>
