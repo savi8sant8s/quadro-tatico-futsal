@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { TeamId } from 'src/app/enums/team-id.enum';
-import { PlayerTheme } from 'src/app/types/player-theme.type';
 import { Storage } from '@capacitor/storage';
 import { EventsService } from '../events/events.service';
+import { Theme } from 'src/app/types/theme.type';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlayerThemeService {
-  private playerThemes: Array<PlayerTheme> = new Array<PlayerTheme>();
+  private playerThemes: Array<Theme> = new Array<Theme>();
 
   constructor(
     private eventsService: EventsService
@@ -19,11 +19,11 @@ export class PlayerThemeService {
     this.playerThemes.push({color: 'green',   borderColor: 'purple'});
   }
 
-  getPlayerThemes(): Array<PlayerTheme> {
+  getPlayerThemes(): Array<Theme> {
     return this.playerThemes;
   }
 
-  async setPlayerThemePreferences(team: TeamId, playerTheme: PlayerTheme) {
+  async setPlayerThemePreferences(team: TeamId, playerTheme: Theme) {
     await Storage.set({
       key: this.getKeyName(team),
       value: JSON.stringify(playerTheme)
@@ -31,7 +31,7 @@ export class PlayerThemeService {
     this.eventsService.publish('player-theme:changed', true);
   }
 
-  async getPlayerThemePreferences(team: TeamId): Promise<PlayerTheme> {
+  async getPlayerThemePreferences(team: TeamId): Promise<Theme> {
     const playerTheme = await Storage.get({
       key: this.getKeyName(team)
     });

@@ -1,4 +1,4 @@
-export type PlayerTheme = {
+export type Theme = {
     color: string;
     borderColor: string;
 };

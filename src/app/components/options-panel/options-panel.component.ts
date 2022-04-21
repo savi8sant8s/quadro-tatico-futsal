@@ -1,8 +1,9 @@
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { Option } from '../../types/option.type';
 import { FormationComponent } from '../formation/formation.component';
 import { PlayerThemeComponent } from '../player-theme/player-theme.component';
+import { FieldThemeComponent } from '../field-theme/field-theme.component';
 
 @Component({
   selector: 'app-options-panel',
@@ -23,7 +24,7 @@ export class OptionsPanelComponent implements OnInit{
       this.options.push({imageUrl: 'assets/formacao.svg', component: FormationComponent});
       this.options.push({imageUrl: 'assets/ajustes.svg', component: PlayerThemeComponent});
     } else {
-      this.options.push({imageUrl: 'assets/quadra.svg', component: null});
+      this.options.push({imageUrl: 'assets/quadra.svg', component: FieldThemeComponent});
       this.options.push({imageUrl: 'assets/mais.svg', component: null});
     }
    }

@@ -10,6 +10,7 @@ import { FutsalCourtComponent } from '../components/futsal-court/futsal-court.co
 import { FutsalPlayerComponent } from '../components/futsal-player/futsal-player.component';
 import { FormationComponent } from '../components/formation/formation.component';
 import { PlayerThemeComponent } from '../components/player-theme/player-theme.component';
+import { FieldThemeComponent } from '../components/field-theme/field-theme.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { PlayerThemeComponent } from '../components/player-theme/player-theme.co
     FutsalCourtComponent,
     FutsalPlayerComponent,
     FormationComponent,
-    PlayerThemeComponent
+    PlayerThemeComponent,
+    FieldThemeComponent
 ]
 })
 export class HomePageModule {}

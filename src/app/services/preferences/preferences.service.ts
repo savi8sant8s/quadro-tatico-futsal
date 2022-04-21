@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Formation } from '../../types/formation.type';
-import { PlayerTheme } from '../../types/player-theme.type';
+import { Theme } from '../../types/theme.type';
 import { Storage } from '@capacitor/storage';
 
 @Injectable({
@@ -23,16 +23,21 @@ export class PreferencesService {
         imageUrl: 'assets/1-2-2.svg',
       };
       await Storage.set({key: 'team-b-formation', value: JSON.stringify(teamBFormation)});
-      const teamAPlayerTheme: PlayerTheme = {
+      const teamAPlayerTheme: Theme = {
         color: 'blue',
         borderColor: 'white'
       };
       await Storage.set({key: 'team-a-player-theme', value: JSON.stringify(teamAPlayerTheme)});
-      const teamBPlayerTheme: PlayerTheme = {
+      const teamBPlayerTheme: Theme = {
         color: 'red',
         borderColor: 'orange'
       };
       await Storage.set({key: 'team-b-player-theme', value: JSON.stringify(teamBPlayerTheme)});
+      const fieldTheme: Theme = {
+        color: 'blue',
+        borderColor: 'white'
+      };
+      await Storage.set({key: 'field-theme', value: JSON.stringify(fieldTheme)});
       await Storage.set({key: 'hasDefaultPreferences', value: 'true'});
     }
   }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { TeamId } from 'src/app/enums/team-id.enum';
-import { PlayerTheme } from 'src/app/types/player-theme.type';
+import { Theme } from 'src/app/types/theme.type';
 import { PlayerThemeService } from '../../services/player-theme/player-theme.service';
 
 @Component({
@@ -10,9 +10,9 @@ import { PlayerThemeService } from '../../services/player-theme/player-theme.ser
   styleUrls: ['./player-theme.component.scss'],
 })
 export class PlayerThemeComponent {
-  playerThemeTeamA: PlayerTheme;
-  playerThemeTeamB: PlayerTheme;
-  playerThemes: Array<PlayerTheme> = new Array<PlayerTheme>();
+  playerThemeTeamA: Theme;
+  playerThemeTeamB: Theme;
+  playerThemes: Array<Theme> = new Array<Theme>();
 
   constructor(
     private playerThemeService: PlayerThemeService,
