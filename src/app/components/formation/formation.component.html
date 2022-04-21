@@ -1,9 +1,9 @@
 <ion-content class="bg-theme-6 ion-padding">
   <div class="ion-text-end" (click)="onClose()">
-    Voltar
+    {{'BACK' | translate}}
   </div>
-  <h3 class="ion-text-center">Selecione uma formação:</h3>
-  <h6>Time A</h6>
+  <h3 class="ion-text-center">{{'FORMATION_TITLE' | translate}}</h3>
+  <h6>{{'TEAM_A' | translate}}</h6>
   <ion-grid>
     <ion-row>
       <ion-col size="6" class="ion-text-center d-flex" *ngFor="let formation of formations" size="6">
@@ -12,7 +12,7 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  <h6>Time B</h6>
+  <h6>{{'TEAM_B' | translate}}</h6>
   <ion-grid>
     <ion-row>
       <ion-col size="6" class="ion-text-center d-flex" *ngFor="let formation of formations" size="6">

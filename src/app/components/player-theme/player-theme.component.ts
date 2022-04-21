@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { TeamId } from 'src/app/enums/team-id.enum';
+import { IClose } from 'src/app/interfaces/close.interface';
+import { ISelect } from 'src/app/interfaces/select.interface';
 import { Theme } from 'src/app/types/theme.type';
 import { PlayerThemeService } from '../../services/player-theme/player-theme.service';
 
@@ -9,7 +11,7 @@ import { PlayerThemeService } from '../../services/player-theme/player-theme.ser
   templateUrl: './player-theme.component.html',
   styleUrls: ['./player-theme.component.scss'],
 })
-export class PlayerThemeComponent {
+export class PlayerThemeComponent implements IClose, ISelect{
   playerThemeTeamA: Theme;
   playerThemeTeamB: Theme;
   playerThemes: Array<Theme> = new Array<Theme>();

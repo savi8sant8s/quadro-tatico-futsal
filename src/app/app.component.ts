@@ -12,6 +12,7 @@ export class AppComponent {
   constructor(
     private platform: Platform,
     private preferences: PreferencesService,
+    
   ) {
     this.platform.ready().then(async () => {
       await this.preferences.setDefaultPreferences();

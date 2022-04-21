@@ -1,0 +1,11 @@
+<ion-content class="bg-theme-6 ion-padding">
+  <div class="ion-text-end" (click)="onClose()">
+    {{'BACK' | translate}}
+  </div>
+  <ion-item class="ion-margin-top">
+    <ion-label position="stacked">{{'LANGUAGE_SELECT_TILE' | translate}}</ion-label>
+    <ion-select [(ngModel)]="languageSelected" (ionChange)="onChangeLanguage()">
+      <ion-select-option *ngFor="let language of languages" [value]="language">{{language | uppercase}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-content>

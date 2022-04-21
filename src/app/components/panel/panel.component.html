@@ -3,7 +3,7 @@
     <ion-grid>
       <ion-row>
         <ion-col *ngFor="let option of options">
-          <img (click)="openModal(option.component)" [src]="option.imageUrl"/>
+          <img (click)="onOpenModal(option.component)" [src]="option.imageUrl"/>
         </ion-col>
       </ion-row>
     </ion-grid>
