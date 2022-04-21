@@ -1,11 +1,18 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+}
+
 .player {
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 100%;
-    background: yellow;
-    border: 0.5rem solid var(--ion-color-orange);
+    border: 0.1rem solid var(--ion-color-white);
+    opacity: 0.4;
 }
 
 .selected {
-    background: var(--ion-color-orange);
+    border: 0.4rem solid var(--ion-color-white);
+    opacity: 1;
 }

@@ -32,7 +32,6 @@ export class OptionsPanelComponent implements OnInit{
    async openModal(component: any) {
      const modal = await this.modalCtrl.create({
         component,
-        cssClass: 'modal'
      });
       modal.present();
    }

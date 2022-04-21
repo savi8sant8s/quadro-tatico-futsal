@@ -2,18 +2,16 @@ import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '
 import { DomController, GestureController, Platform } from '@ionic/angular';
 
 @Component({
-  selector: 'app-futsal-player',
-  templateUrl: './futsal-player.component.html',
-  styleUrls: ['./futsal-player.component.scss'],
+  selector: 'app-player',
+  templateUrl: './player.component.html',
+  styleUrls: ['./player.component.scss'],
 })
-export class FutsalPlayerComponent implements AfterViewInit, OnInit{
+export class PlayerComponent implements AfterViewInit {
   @ViewChild('player', { read: ElementRef }) player: ElementRef;
 
   @Input() x = 0;
   @Input() y = 0;
-  @Input() theme = 0;
-
-  themeClass = 'color-1';
+  @Input() cssClass = 'player-theme-1';
 
   constructor(
     private gestureCtrl: GestureController,
@@ -26,10 +24,6 @@ export class FutsalPlayerComponent implements AfterViewInit, OnInit{
       this.setupGesture(this.platform.width(), this.platform.height());
       });
     });
-  }
-
-  ngOnInit(){
-    this.themeClass = `color-${this.theme}`;
   }
 
   setupGesture(width, height) {

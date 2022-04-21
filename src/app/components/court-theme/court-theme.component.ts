@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { CourtTheme } from 'src/app/types/court-theme.type';
+import { Theme } from 'src/app/types/theme.type';
 import { CourtThemeService } from '../../services/court-theme/court-theme.service';
 
 @Component({
@@ -9,8 +9,8 @@ import { CourtThemeService } from '../../services/court-theme/court-theme.servic
   styleUrls: ['./court-theme.component.scss'],
 })
 export class CourtThemeComponent {
-  courtThemes: Array<CourtTheme> = new Array<CourtTheme>();
-  courtThemeSelected: CourtTheme;
+  courtThemes: Array<Theme> = new Array<Theme>();
+  courtThemeSelected: Theme;
 
   constructor(
     private courtThemeService: CourtThemeService,
@@ -27,7 +27,7 @@ export class CourtThemeComponent {
     await this.modalCtrl.dismiss();
   }
 
-  onSelect(courtTheme: CourtTheme){
+  onSelect(courtTheme: Theme){
     this.courtThemeService.setThemePreferences(courtTheme);
     this.courtThemeSelected = courtTheme;
   }
