@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { TeamId } from 'src/app/enums/team-id.enum';
 import { Formation } from 'src/app/types/formation.type';
 import { Storage } from '@capacitor/storage';
+import { Subject } from 'rxjs';
+import { EventsService } from '../events/events.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +11,9 @@ import { Storage } from '@capacitor/storage';
 export class FormationService {
   private formations: Array<Formation> = new Array<Formation>();
 
-  constructor() {
+  constructor(
+    private events: EventsService
+  ) {
     this.formations.push({name: '1-2-2',   imageUrl: 'assets/1-2-2.svg'});
     this.formations.push({name: '1-3-1',   imageUrl: 'assets/1-3-1.svg'});
     this.formations.push({name: '1-1-2-1',   imageUrl: 'assets/1-1-2-1.svg'});
@@ -25,6 +29,7 @@ export class FormationService {
       key: this.getKeyName(team),
       value: JSON.stringify(formation)
     });
+    this.events.publish('formation:changed', true);
   }
 
   async getFormationPreferences(team: TeamId): Promise<Formation> {
