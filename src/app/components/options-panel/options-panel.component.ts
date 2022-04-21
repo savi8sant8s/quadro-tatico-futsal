@@ -23,7 +23,7 @@ export class OptionsPanelComponent implements OnInit{
       this.options.push({imageUrl: 'assets/formacao.svg', component: FormationComponent});
       this.options.push({imageUrl: 'assets/ajustes.svg', component: SettingsComponent});
     } else {
-      this.options.push({imageUrl: 'assets/salvar.svg', component: null});
+      this.options.push({imageUrl: 'assets/quadra.svg', component: null});
       this.options.push({imageUrl: 'assets/mais.svg', component: null});
     }
    }
