@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { FormationType } from 'src/app/types/formation.type';
+import { Formation } from 'src/app/types/formation.type';
 
 @Component({
   selector: 'app-formation',
@@ -8,7 +8,7 @@ import { FormationType } from 'src/app/types/formation.type';
   styleUrls: ['./formation.component.scss'],
 })
 export class FormationComponent implements OnInit {
-  formations: Array<FormationType> = new Array<FormationType>();
+  formations: Array<Formation> = new Array<Formation>();
   formationSelected = '1-2-2';
 
   constructor(

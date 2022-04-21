@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
-import { PlayerPositionType } from '../types/player-position.type';
+import { PlayerPosition } from '../types/player-position.type';
 
 @Component({
   selector: 'app-home',
@@ -10,8 +10,8 @@ import { PlayerPositionType } from '../types/player-position.type';
 export class HomePage {
   width: number;
   height: number;
-  team1: Array<PlayerPositionType> = new Array<PlayerPositionType>();
-  team2: Array<PlayerPositionType> = new Array<PlayerPositionType>();
+  team1: Array<PlayerPosition> = new Array<PlayerPosition>();
+  team2: Array<PlayerPosition> = new Array<PlayerPosition>();
 
   constructor(
     private platform: Platform,
