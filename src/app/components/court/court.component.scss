@@ -1,25 +1,27 @@
-.area-1 {
-    position: absolute;
-    top: 0;
+
+@mixin court-area {
     width: 50%;
     height: 6rem; 
     border: 0.5rem solid white;
     border-top-left-radius: 100%;  
     border-top-right-radius: 100%;
     border-bottom: 0rem;
-    transform: rotate(180deg) translate(-50%);
 }
 
-.area-2 {
-    position: absolute;
-    bottom: 0;
-    width: 50%;
-    height: 6rem; 
-    border: 0.5rem solid white;
-    border-top-left-radius: 100%;  
-    border-top-right-radius: 100%;
-    border-bottom: 0rem;
-    transform: translate(50%);
+.court{
+    &-area-top {
+        position: absolute;
+        top: 0;
+        @include court-area;
+        transform: rotate(180deg) translate(-50%);
+    }
+
+    &-area-bottom {
+        position: absolute;
+        bottom: 0;
+        @include court-area;
+        transform: translate(50%);
+    }
 }
 
 .middle-line {
