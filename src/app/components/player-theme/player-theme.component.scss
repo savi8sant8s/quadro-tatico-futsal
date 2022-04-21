@@ -1,0 +1,11 @@
+.player {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100%;
+    background: yellow;
+    border: 0.5rem solid var(--ion-color-orange);
+}
+
+.selected {
+    background: var(--ion-color-orange);
+}

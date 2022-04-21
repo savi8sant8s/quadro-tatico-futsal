@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { SettingsComponent } from './settings.component';
+import { PlayerThemeComponent } from './player-theme.component';
 
-describe('SettingsComponent', () => {
-  let component: SettingsComponent;
-  let fixture: ComponentFixture<SettingsComponent>;
+describe('PlayerThemeComponent', () => {
+  let component: PlayerThemeComponent;
+  let fixture: ComponentFixture<PlayerThemeComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ SettingsComponent ],
+      declarations: [ PlayerThemeComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SettingsComponent);
+    fixture = TestBed.createComponent(PlayerThemeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

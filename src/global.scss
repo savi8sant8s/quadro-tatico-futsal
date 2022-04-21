@@ -24,3 +24,14 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.close-modal {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.divider {
+    border-bottom: 0.25rem solid yellow;
+    width: 100%;
+}

@@ -25,6 +25,9 @@ export class HomePage {
     this.eventsService.subscribe('formation:changed', async (data) => {
       await this.setTeamsPositions();
     });
+    this.eventsService.subscribe('player-theme:changed', async (data) => {
+      console.log('alterado');
+    });
   }
 
   async setTeamsPositions(){
