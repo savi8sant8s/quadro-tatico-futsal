@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
-import { FieldThemeService } from './field-theme.service';
+import { CourtThemeService } from './court-theme.service';
 
-describe('FieldThemeService', () => {
-  let service: FieldThemeService;
+describe('CourtThemeService', () => {
+  let service: CourtThemeService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(FieldThemeService);
+    service = TestBed.inject(CourtThemeService);
   });
 
   it('should be created', () => {

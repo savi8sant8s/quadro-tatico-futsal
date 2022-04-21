@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { FutsalCourtComponent } from './futsal-court.component';
+import { CourtThemeComponent } from './court-theme.component';
 
-describe('FutsalCourtComponent', () => {
-  let component: FutsalCourtComponent;
-  let fixture: ComponentFixture<FutsalCourtComponent>;
+describe('CourtThemeComponent', () => {
+  let component: CourtThemeComponent;
+  let fixture: ComponentFixture<CourtThemeComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ FutsalCourtComponent ],
+      declarations: [ CourtThemeComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(FutsalCourtComponent);
+    fixture = TestBed.createComponent(CourtThemeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

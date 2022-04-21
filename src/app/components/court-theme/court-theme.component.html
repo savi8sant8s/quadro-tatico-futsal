@@ -1,0 +1,9 @@
+<ion-content class="court-theme-5 ion-padding">
+  <div class="ion-text-end" (click)="onClose()">
+    Voltar
+  </div>
+  <h3 class="ion-text-center">Selecione a cor da quadra:</h3>
+  <div class="container" *ngFor="let courtTheme of courtThemes">
+    <div (click)="onSelect(courtTheme)" [class]="courtTheme.cssClass" class="court" [ngClass]="{'selected': courtTheme.cssClass === courtThemeSelected.cssClass}"></div>
+  </div>
+</ion-content>

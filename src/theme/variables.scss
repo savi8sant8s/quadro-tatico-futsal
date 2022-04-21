@@ -75,9 +75,13 @@
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
 
-  --ion-color-orange: #FFC300;
+  /** extra colors **/
+  --ion-color-white: #f1f7ee;
+  --ion-color-yellow: #FFC300;
   --ion-color-green:  #48C9B0;
-  --ion-color-strong-orange: #FF5733;
+  --ion-color-orange: #FF5733;
+  --ion-color-gray: #b0bea9;
+  --ion-color-black: #3b5249;
 }
 
 @media (prefers-color-scheme: dark) {

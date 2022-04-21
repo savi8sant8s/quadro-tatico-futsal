@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Formation } from '../../types/formation.type';
 import { Theme } from '../../types/theme.type';
 import { Storage } from '@capacitor/storage';
+import { CourtTheme } from 'src/app/types/court-theme.type';
 
 @Injectable({
   providedIn: 'root'
@@ -33,11 +34,10 @@ export class PreferencesService {
         borderColor: 'orange'
       };
       await Storage.set({key: 'team-b-player-theme', value: JSON.stringify(teamBPlayerTheme)});
-      const fieldTheme: Theme = {
-        color: 'blue',
-        borderColor: 'white'
+      const courtTheme: CourtTheme = {
+        cssClass: 'court-theme-1',
       };
-      await Storage.set({key: 'field-theme', value: JSON.stringify(fieldTheme)});
+      await Storage.set({key: 'court-theme', value: JSON.stringify(courtTheme)});
       await Storage.set({key: 'hasDefaultPreferences', value: 'true'});
     }
   }
