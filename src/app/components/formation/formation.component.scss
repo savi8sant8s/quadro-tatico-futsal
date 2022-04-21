@@ -12,3 +12,18 @@
 .selected {
     background: blue;
 }
+
+.divider {
+    border-bottom: 0.25rem solid #e0e0e0;
+    width: 100%;
+}
+
+.d-flex {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    span {
+        margin-left: 1rem;
+    }
+}

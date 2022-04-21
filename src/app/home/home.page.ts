@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import { Platform } from '@ionic/angular';
-import { PlayerPosition } from '../types/player-position.type';
+import { TeamId } from '../enums/team-id.enum';
+import { EventsService } from '../services/events/events.service';
+import { FormationPositionsService } from '../services/formation-positions/formation-positions.service';
+import { FormationService } from '../services/formation/formation.service';
+import { FormationPositions } from '../types/formation-positions.type';
 
 @Component({
   selector: 'app-home',
@@ -8,31 +11,26 @@ import { PlayerPosition } from '../types/player-position.type';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  width: number;
-  height: number;
-  team1: Array<PlayerPosition> = new Array<PlayerPosition>();
-  team2: Array<PlayerPosition> = new Array<PlayerPosition>();
+  teamA: FormationPositions = {name: null, positions: []};
+  teamB: FormationPositions = {name: null, positions: []};
 
   constructor(
-    private platform: Platform,
-  ) {
-    this.platform.ready().then(() => {
-      this.width = this.platform.width();
-      this.height = this.platform.height();
-      this.setTeams();
+    private formationPositionsService: FormationPositionsService,
+    private formationService: FormationService,
+    private eventsService: EventsService,
+  ) {}
+
+  async ionViewWillEnter() {
+    await this.setTeamsPositions();
+    this.eventsService.subscribe('formation:changed', async (data) => {
+      await this.setTeamsPositions();
     });
   }
 
-  setTeams() {
-    this.team1.push({ x: this.width * 0.5, y: this.height * 0.8 });
-    this.team1.push({ x: this.width * 0.25, y: this.height * 0.75 });
-    this.team1.push({ x: this.width * 0.75, y: this.height * 0.75});
-    this.team1.push({ x: this.width * 0.5, y: this.height * 0.7 });
-    this.team1.push({ x: this.width * 0.5, y: this.height * 0.6 });
-    this.team2.push({ x: this.width * 0.5, y: this.height * 0.2 });
-    this.team2.push({ x: this.width * 0.25, y: this.height * 0.35 });
-    this.team2.push({ x: this.width * 0.75, y: this.height * 0.35});
-    this.team2.push({ x: this.width * 0.5, y: this.height * 0.3 });
-    this.team2.push({ x: this.width * 0.5, y: this.height * 0.4 });
+  async setTeamsPositions(){
+    const teamAFormation = await this.formationService.getFormationPreferences(TeamId.a);
+    this.teamA = this.formationPositionsService.getFormationPositions(teamAFormation.name);
+    const teamBFormation = await this.formationService.getFormationPreferences(TeamId.b);
+    this.teamB = this.formationPositionsService.getFormationPositions(teamBFormation.name, true);
   }
 }
