@@ -1,0 +1,27 @@
+<ion-content class="ion-padding">
+  <div (click)="onClose()" class="close-modal">
+    <ion-icon size="large" color="close-circle-outline"></ion-icon>
+  </div>
+  <h3>Selecione uma cor para os times:</h3>
+  <h6>Time A</h6>
+  <ion-grid>
+    <ion-row >
+      <ion-col size="6" class="ion-text-center" *ngFor="let playerTheme of playerThemes" size="6">
+        <div (click)="onSelect('a', playerTheme)" class="player" [ngClass]="{'selected': playerTheme.color === playerThemeTeamA.color}">
+          {{playerTheme.color.slice(0,1)}}
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="divider"></div>
+  <h6>Time B</h6>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" class="ion-text-center" *ngFor="let playerTheme of playerThemes" size="6">
+        <div (click)="onSelect('b', playerTheme)" class="player" [ngClass]="{'selected': playerTheme.color === playerThemeTeamB.color}">
+          {{playerTheme.color.slice(0,1)}}
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
