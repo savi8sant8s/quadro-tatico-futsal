@@ -1,4 +1,5 @@
 {
+    "APP_TITLE": "Futsal Tactical Board",
     "FORMATION_TITLE": "Select a formation",
     "PLAYER_THEME_TITLE": "Select the color of the teams",
     "COURT_THEME_TITLE": "Select the color of the court",
@@ -6,11 +7,12 @@
     "TEAM_B": "Team B",
     "BACK": "Back",
     "LANGUAGE_SELECT_TITLE": "Select the language",
-    "ABOUT_TITLE": "About",
+    "CREATED_BY": "Created by Sávio Santos",
     "USE_TERMS_TITLE": "Use terms",
     "PRO_VERSION_TITLE": "Pro version (coming soon)",
     "CONFIRM": "Confirm",
     "CANCEL": "Cancel",
     "TERMS_MESSAGE": "By clicking Confirm, you agree to the terms of use:",
-    "TERMS_LINK_TITLE": "Use Terms and Privacy Policy"
+    "TERMS_LINK_TITLE": "Use Terms and Privacy Policy",
+    "QUIT": "Quit"
 }

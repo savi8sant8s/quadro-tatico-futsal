@@ -1,4 +1,5 @@
 {
+    "APP_TITLE": "Tablero Tactico de Futsal",
     "FORMATION_TITLE": "Seleccione una formación",
     "PLAYER_THEME_TITLE": "Seleccione el color de los equipos",
     "COURT_THEME_TITLE": "Seleccione el color de la cancha",
@@ -6,11 +7,12 @@
     "TEAM_B": "Equip B",
     "BACK": "Tornar",
     "LANGUAGE_SELECT_TITLE": "Seleccione el idioma",
-    "ABOUT_TITLE": "Sobre",
+    "CREATED_BY": "Criado por Sávio Santos",
     "USE_TERMS_TITLE": "Condiciones de uso",
     "PRO_VERSION_TITLE": "Versión Pro (pronto)",
     "CONFIRM": "Confirmar",
     "CANCEL": "Cancelar",
     "TERMS_MESSAGE": "Al hacer clic en Confirmar, aceptas los términos de uso:",
-    "TERMS_LINK_TITLE": "Términos de uso y política de privacidad"
+    "TERMS_LINK_TITLE": "Términos de uso y política de privacidad",
+    "QUIT": "Salir"
 }
