@@ -1,31 +1,34 @@
 import { Component } from '@angular/core';
-import { ModalController } from '@ionic/angular';
-import { IClose } from 'src/app/interfaces/close.interface';
 import { TranslateService} from '@ngx-translate/core';
+import { LanguagesService } from 'src/app/services/languages/languages.service';
+import { Language } from '../../types/language.type';
 
 @Component({
   selector: 'app-more',
   templateUrl: './more.component.html',
   styleUrls: ['./more.component.scss'],
 })
-export class MoreComponent implements IClose{
-  languages: Array<string>;
-  languageSelected: string;
+export class MoreComponent {
+  languages: Array<Language> = new Array<Language>();
+  languageSelected: Language;
 
   constructor(
-    private modalCtrl: ModalController,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private languagesService: LanguagesService
   ) {
-    this.languageSelected = this.translateService.defaultLang;
-    this.languages = this.translateService.getLangs();
-    console.log(this.languages);
-  }
-
-  async onClose(){
-    await this.modalCtrl.dismiss();
+    this.languages = this.languagesService.getLanguages();
+    this.languageSelected = this.languagesService.findLanguageByCode(this.translateService.defaultLang);
   }
 
   onChangeLanguage(){
-    this.translateService.use(this.languageSelected);
+    this.translateService.use(this.languageSelected.code);
+  }
+
+  onOpenTerms(){
+
+  }
+
+  onOpenProVersion(){
+
   }
 }

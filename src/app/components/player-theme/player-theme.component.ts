@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
-import { ModalController } from '@ionic/angular';
-import { TeamId } from 'src/app/enums/team-id.enum';
-import { IClose } from 'src/app/interfaces/close.interface';
-import { ISelect } from 'src/app/interfaces/select.interface';
-import { Theme } from 'src/app/types/theme.type';
+import { TeamId } from '../../enums/team-id.enum';
+import { Theme } from '../../types/theme.type';
 import { PlayerThemeService } from '../../services/player-theme/player-theme.service';
 
 @Component({
@@ -11,14 +8,13 @@ import { PlayerThemeService } from '../../services/player-theme/player-theme.ser
   templateUrl: './player-theme.component.html',
   styleUrls: ['./player-theme.component.scss'],
 })
-export class PlayerThemeComponent implements IClose, ISelect{
+export class PlayerThemeComponent{
   playerThemeTeamA: Theme;
   playerThemeTeamB: Theme;
   playerThemes: Array<Theme> = new Array<Theme>();
 
   constructor(
-    private playerThemeService: PlayerThemeService,
-    private modalCtrl: ModalController,
+    private playerThemeService: PlayerThemeService
   ) {
    }
 
@@ -26,10 +22,6 @@ export class PlayerThemeComponent implements IClose, ISelect{
     this.playerThemes = this.playerThemeService.getPlayerThemes();
     this.playerThemeTeamA = await this.playerThemeService.getPlayerThemePreferences(TeamId.a);
     this.playerThemeTeamB = await this.playerThemeService.getPlayerThemePreferences(TeamId.b);
-  }
-
-  async onClose(){
-    await this.modalCtrl.dismiss();
   }
 
   onSelect(team, playerTheme){

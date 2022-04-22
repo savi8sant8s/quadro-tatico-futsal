@@ -3,6 +3,9 @@ import { Formation } from '../../types/formation.type';
 import { Theme } from '../../types/theme.type';
 import { Storage } from '@capacitor/storage';
 import { TranslateService} from '@ngx-translate/core';
+import { ModalController } from '@ionic/angular';
+import { WelcomeComponent } from 'src/app/components/welcome/welcome.component';
+import { LanguagesService } from '../languages/languages.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,20 +13,35 @@ import { TranslateService} from '@ngx-translate/core';
 export class PreferencesService {
 
   constructor(
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private modalCtrl: ModalController,
+    private languagesService: LanguagesService
   ) { }
 
   async setDefaultPreferences() {
     const { value: hasDefaultPreferences } = await Storage.get({ key: 'hasDefaultPreferences' });
+    const {value: acceptedUseTerms} = await Storage.get({key: 'acceptedTerms'});
+
+    if (!acceptedUseTerms){
+      this.showWelcomeModal();
+    }
+
     if (!hasDefaultPreferences) {
       await this.setDefaultFormations();
       await this.setDefaultThemes();
-
-      this.translateService.addLangs(['pt-br', 'en', 'es']);
-
       await Storage.set({key: 'hasDefaultPreferences', value: 'true'});
     }
+    this.translateService.addLangs(this.languagesService.getLanguagesCodes());
   }
+
+  async showWelcomeModal(){
+    const modal = await this.modalCtrl.create({
+      component: WelcomeComponent,
+      cssClass: 'welcome-modal',
+      backdropDismiss: false,
+    });
+    modal.present();
+  };
 
   async setDefaultFormations(){
     const teamAFormation: Formation = {
@@ -40,11 +58,11 @@ export class PreferencesService {
 
   async setDefaultThemes(){
     const teamAPlayerTheme: Theme = {
-      cssClass: 'player-theme-1',
+      cssClass: 'player-theme-2',
     };
     await Storage.set({key: 'team-a-player-theme', value: JSON.stringify(teamAPlayerTheme)});
     const teamBPlayerTheme: Theme = {
-      cssClass: 'player-theme-2',
+      cssClass: 'player-theme-3',
     };
     await Storage.set({key: 'team-b-player-theme', value: JSON.stringify(teamBPlayerTheme)});
     const courtTheme: Theme = {

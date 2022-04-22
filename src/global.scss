@@ -83,3 +83,9 @@ ion-content{
         @include player-theme-border;
     }
 }
+
+.welcome-modal {
+    --height: 80%;
+    --width: 80%;
+    --border-radius: 0.5rem;
+}

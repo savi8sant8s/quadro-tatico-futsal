@@ -13,6 +13,8 @@ import { CourtThemeComponent } from '../../components/court-theme/court-theme.co
 import { CourtComponent } from '../../components/court/court.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { MoreComponent } from 'src/app/components/more/more.component';
+import { BackModalComponent } from 'src/app/components/back-modal/back-modal.component';
+import { WelcomeComponent } from 'src/app/components/welcome/welcome.component';
 
 @NgModule({
   imports: [
@@ -30,7 +32,9 @@ import { MoreComponent } from 'src/app/components/more/more.component';
     FormationComponent,
     PlayerThemeComponent,
     CourtThemeComponent,
-    MoreComponent
+    MoreComponent,
+    BackModalComponent,
+    WelcomeComponent
 ]
 })
 export class HomePageModule {}
