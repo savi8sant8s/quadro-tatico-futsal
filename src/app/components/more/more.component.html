@@ -1,11 +1,22 @@
 <ion-content class="bg-theme-6 ion-padding">
-  <div class="ion-text-end" (click)="onClose()">
-    {{'BACK' | translate}}
-  </div>
-  <ion-item class="ion-margin-top">
-    <ion-label position="stacked">{{'LANGUAGE_SELECT_TILE' | translate}}</ion-label>
-    <ion-select [(ngModel)]="languageSelected" (ionChange)="onChangeLanguage()">
-      <ion-select-option *ngFor="let language of languages" [value]="language">{{language | uppercase}}</ion-select-option>
+  <app-back-modal></app-back-modal>
+  <ion-item color="none" class="ion-margin-top">
+    <ion-label position="stacked">{{'LANGUAGE_SELECT_TITLE' | translate}}</ion-label>
+    <ion-select [okText]="confirmText" [cancelText]="cancelText" [(ngModel)]="languageSelected" (ionChange)="onChangeLanguage()">
+      <ion-select-option *ngFor="let language of languages" [value]="language">{{language.name}}</ion-select-option>
     </ion-select>
+  </ion-item>
+  <ion-item (click)="onOpenTerms()" color="none" class="ion-margin-top">
+    <ion-label>{{'USE_TERMS_TITLE' | translate}}</ion-label>
+    <ion-icon slot="end" size="small" color="medium" name="open-outline"></ion-icon>
+  </ion-item>
+  <ion-item (click)="onOpenProVersion()" color="none" class="ion-margin-top">
+    <ion-label>{{'PRO_VERSION_TITLE' | translate}}</ion-label>
+    <ion-badge color="success" slot="end">
+      <ion-icon size="small" class="white-icon" name="logo-android"></ion-icon>
+    </ion-badge>
+  </ion-item>
+  <ion-item color="none" class="ion-margin-top">
+    <ion-label position="stacked">{{'ABOUT_TITLE' | translate}}</ion-label>
   </ion-item>
 </ion-content>

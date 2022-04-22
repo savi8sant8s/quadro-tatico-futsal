@@ -5,5 +5,12 @@
     "TEAM_A": "Time A",
     "TEAM_B": "Time B",
     "BACK": "Voltar",
-    "LANGUAGE_SELECT_TILE": "Selecione o idioma"
+    "LANGUAGE_SELECT_TITLE": "Selecione o idioma",
+    "ABOUT_TITLE": "Sobre",
+    "USE_TERMS_TITLE": "Termos de uso",
+    "PRO_VERSION_TITLE": "Versão Pro (em breve)",
+    "CONFIRM": "Confirmar",
+    "CANCEL": "Cancelar",
+    "TERMS_MESSAGE": "Ao clicar em Confirmar, você concorda com os termos de uso:",
+    "TERMS_LINK_TITLE": "Termos de uso e política de privacidade"
 }

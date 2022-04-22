@@ -5,5 +5,12 @@
     "TEAM_A": "Equip A",
     "TEAM_B": "Equip B",
     "BACK": "Tornar",
-    "LANGUAGE_SELECT_TILE": "Seleccione el idioma"
+    "LANGUAGE_SELECT_TITLE": "Seleccione el idioma",
+    "ABOUT_TITLE": "Sobre",
+    "USE_TERMS_TITLE": "Condiciones de uso",
+    "PRO_VERSION_TITLE": "Versión Pro (pronto)",
+    "CONFIRM": "Confirmar",
+    "CANCEL": "Cancelar",
+    "TERMS_MESSAGE": "Al hacer clic en Confirmar, aceptas los términos de uso:",
+    "TERMS_LINK_TITLE": "Términos de uso y política de privacidad"
 }

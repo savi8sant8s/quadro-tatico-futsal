@@ -3,6 +3,9 @@ import { Formation } from '../../types/formation.type';
 import { Theme } from '../../types/theme.type';
 import { Storage } from '@capacitor/storage';
 import { TranslateService} from '@ngx-translate/core';
+import { ModalController } from '@ionic/angular';
+import { WelcomeComponent } from 'src/app/components/welcome/welcome.component';
+import { LanguagesService } from '../languages/languages.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,20 +13,39 @@ import { TranslateService} from '@ngx-translate/core';
 export class PreferencesService {
 
   constructor(
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private modalCtrl: ModalController,
+    private languagesService: LanguagesService
   ) { }
 
   async setDefaultPreferences() {
-    const { value: hasDefaultPreferences } = await Storage.get({ key: 'hasDefaultPreferences' });
-    if (!hasDefaultPreferences) {
+    const { value: firstAccess } = await Storage.get({ key: 'first-access' });
+    const { value: acceptedTerms } = await Storage.get({key: 'accepted-terms'});
+    const { value: language } = await Storage.get({key: 'language'});
+
+    await this.languagesService.setCurrentLanguage(language ? language : 'pt-br');
+
+    if (!acceptedTerms){
+      this.showWelcomeModal();
+    }
+
+    if (!firstAccess) {
       await this.setDefaultFormations();
       await this.setDefaultThemes();
-
-      this.translateService.addLangs(['pt-br', 'en', 'es']);
-
-      await Storage.set({key: 'hasDefaultPreferences', value: 'true'});
+      await Storage.set({key: 'first-access', value: 'true'});
     }
+
+    this.translateService.addLangs(this.languagesService.getLanguagesCodes());
   }
+
+  async showWelcomeModal(){
+    const modal = await this.modalCtrl.create({
+      component: WelcomeComponent,
+      cssClass: 'welcome-modal',
+      backdropDismiss: false,
+    });
+    modal.present();
+  };
 
   async setDefaultFormations(){
     const teamAFormation: Formation = {
@@ -40,11 +62,11 @@ export class PreferencesService {
 
   async setDefaultThemes(){
     const teamAPlayerTheme: Theme = {
-      cssClass: 'player-theme-1',
+      cssClass: 'player-theme-2',
     };
     await Storage.set({key: 'team-a-player-theme', value: JSON.stringify(teamAPlayerTheme)});
     const teamBPlayerTheme: Theme = {
-      cssClass: 'player-theme-2',
+      cssClass: 'player-theme-3',
     };
     await Storage.set({key: 'team-b-player-theme', value: JSON.stringify(teamBPlayerTheme)});
     const courtTheme: Theme = {

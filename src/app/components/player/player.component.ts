@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { DomController, GestureController, Platform } from '@ionic/angular';
 
 @Component({
@@ -47,11 +47,11 @@ export class PlayerComponent implements AfterViewInit {
     if (x < 30) {
       x = 30;
     }
-    if (y < 110) {
-      y = 110;
+    if (y < 30) {
+      y = 30;
     }
-    if (x > width - 30) {
-      x = width - 30;
+    if (x > width - 35) {
+      x = width - 35;
     }
     if (y > height - 110) {
       y = height - 110;
@@ -60,9 +60,7 @@ export class PlayerComponent implements AfterViewInit {
   }
 
   setNewPosition(x, y) {
-    this.player.nativeElement.style.transform = `
-      translate(${x-30}px, ${y-110}px)
-    `;
+    this.player.nativeElement.style.transform = `translate(${x-30}px, ${y-30}px)`;
   }
 }
 

@@ -5,5 +5,12 @@
     "TEAM_A": "Team A",
     "TEAM_B": "Team B",
     "BACK": "Back",
-    "LANGUAGE_SELECT_TILE": "Select the language"
+    "LANGUAGE_SELECT_TITLE": "Select the language",
+    "ABOUT_TITLE": "About",
+    "USE_TERMS_TITLE": "Use terms",
+    "PRO_VERSION_TITLE": "Pro version (coming soon)",
+    "CONFIRM": "Confirm",
+    "CANCEL": "Cancel",
+    "TERMS_MESSAGE": "By clicking Confirm, you agree to the terms of use:",
+    "TERMS_LINK_TITLE": "Use Terms and Privacy Policy"
 }

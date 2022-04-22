@@ -21,13 +21,10 @@ export class PanelComponent implements OnInit{
   }
 
    ngOnInit() {
-    if (this.playerOptions) {
-      this.options.push({imageUrl: 'assets/options/formacao.svg', component: FormationComponent});
-      this.options.push({imageUrl: 'assets/options/ajustes.svg', component: PlayerThemeComponent});
-    } else {
-      this.options.push({imageUrl: 'assets/options/quadra.svg', component: CourtThemeComponent});
-      this.options.push({imageUrl: 'assets/options/mais.svg', component: MoreComponent});
-    }
+      this.options.push({imageUrl: 'assets/options/formation.png', component: FormationComponent});
+      this.options.push({imageUrl: 'assets/options/player.png', component: PlayerThemeComponent});
+      this.options.push({imageUrl: 'assets/options/court.png', component: CourtThemeComponent});
+      this.options.push({imageUrl: 'assets/options/more.png', component: MoreComponent});
    }
 
    async onOpenModal(component: any) {
