@@ -41,7 +41,7 @@ export class WelcomeComponent {
 
   async onAcceptTerms(){
     await Storage.set({
-      key: 'acceptedTerms',
+      key: 'accepted-terms',
       value: 'true'
     });
     this.modalCtrl.dismiss();
