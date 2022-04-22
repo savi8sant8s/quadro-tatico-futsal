@@ -14,12 +14,11 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
-    BrowserModule, 
-    IonicModule.forRoot(), 
-    AppRoutingModule, 
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
     HttpClientModule,
     TranslateModule.forRoot({
-      defaultLanguage: 'pt-br',
       loader: {
         provide: TranslateLoader,
         useFactory: (createTranslateLoader),

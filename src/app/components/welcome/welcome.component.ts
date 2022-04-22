@@ -13,6 +13,8 @@ import { ModalController } from '@ionic/angular';
 export class WelcomeComponent {
   languages: Array<Language> = new Array<Language>();
   languageSelected: Language;
+  confirmText: string;
+  cancelText: string;
 
   constructor(
     private translateService: TranslateService,
@@ -20,11 +22,21 @@ export class WelcomeComponent {
     private modalCtrl: ModalController
   ) {
     this.languages = this.languagesService.getLanguages();
-    this.languageSelected = this.languagesService.findLanguageByCode(this.translateService.defaultLang);
+    this.languageSelected = this.languagesService.getCurrentLanguage();
   }
 
-  onSelectLanguage(){
-    this.translateService.use(this.languageSelected.code);
+  async ionViewWillEnter(){
+    await this.getTexts();
+  }
+
+  async getTexts(){
+    this.confirmText = await this.translateService.get('CONFIRM').toPromise();
+    this.cancelText = await this.translateService.get('CANCEL').toPromise();
+  }
+
+  async onChangeLanguage(){
+    await this.languagesService.setCurrentLanguage(this.languageSelected.code);
+    await this.getTexts();
   }
 
   async onAcceptTerms(){

@@ -20,7 +20,10 @@ export class PreferencesService {
 
   async setDefaultPreferences() {
     const { value: hasDefaultPreferences } = await Storage.get({ key: 'hasDefaultPreferences' });
-    const {value: acceptedUseTerms} = await Storage.get({key: 'acceptedTerms'});
+    const { value: acceptedUseTerms } = await Storage.get({key: 'acceptedTerms'});
+    const { value: language } = await Storage.get({key: 'language'});
+
+    await this.languagesService.setCurrentLanguage(language ? language : 'pt-br');
 
     if (!acceptedUseTerms){
       this.showWelcomeModal();
@@ -31,6 +34,7 @@ export class PreferencesService {
       await this.setDefaultThemes();
       await Storage.set({key: 'hasDefaultPreferences', value: 'true'});
     }
+
     this.translateService.addLangs(this.languagesService.getLanguagesCodes());
   }
 
