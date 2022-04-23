@@ -15,7 +15,9 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
   entryComponents: [],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(),
+    IonicModule.forRoot({
+      mode: 'ios',
+    }),
     AppRoutingModule,
     HttpClientModule,
     TranslateModule.forRoot({
