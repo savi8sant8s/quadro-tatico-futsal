@@ -53,8 +53,8 @@ export class PlayerComponent implements AfterViewInit {
     if (x > width - 35) {
       x = width - 35;
     }
-    if (y > height - 110) {
-      y = height - 110;
+    if (y > height - 120) {
+      y = height - 120;
     }
     return { x, y };
   }

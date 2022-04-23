@@ -4,7 +4,7 @@
     <h1>{{'APP_TITLE' | translate}}</h1>
     <img height="150px" src="assets/logo.png"/>
     <br>
-    <ion-note>0.0.1</ion-note>
+    <ion-note>1.0.0</ion-note>
   </div>
   <ion-item color="none" lines="none" class="ion-margin-top">
     <ion-label color="light" position="stacked">{{'LANGUAGE_SELECT_TITLE' | translate}}</ion-label>
@@ -14,7 +14,9 @@
   </ion-item>
   <ion-item (click)="onOpenTerms()" color="none" lines="none" class="ion-margin-top">
     <ion-label color="light">{{'USE_TERMS_TITLE' | translate}}</ion-label>
-    <ion-icon slot="end" size="small" color="medium" name="open-outline"></ion-icon>
+    <ion-badge color="success" slot="end">
+      <ion-icon size="small" class="white-icon" name="document-text-outline"></ion-icon>
+    </ion-badge>
   </ion-item>
   <ion-item (click)="onOpenProVersion()" color="none" lines="none" class="ion-margin-top">
     <ion-label color="light">{{'PRO_VERSION_TITLE' | translate}}</ion-label>

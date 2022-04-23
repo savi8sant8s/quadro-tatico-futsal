@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ModalController, Platform } from '@ionic/angular';
 import { PreferencesService } from './services/preferences/preferences.service';
 import { App } from '@capacitor/app';
+import { SplashScreen } from '@capacitor/splash-screen';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -16,6 +17,7 @@ export class AppComponent {
 
   ) {
     this.platform.ready().then(async () => {
+      SplashScreen.hide({fadeOutDuration: 0});
       await this.preferences.setDefaultPreferences();
       this.backButtonEvent();
     });
