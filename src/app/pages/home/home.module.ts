@@ -12,8 +12,8 @@ import { PlayerThemeComponent } from '../../components/player-theme/player-theme
 import { CourtThemeComponent } from '../../components/court-theme/court-theme.component';
 import { CourtComponent } from '../../components/court/court.component';
 import { TranslateModule } from '@ngx-translate/core';
-import { MoreComponent } from 'src/app/components/more/more.component';
-import { BackModalComponent } from 'src/app/components/back-modal/back-modal.component';
+import { MoreComponent } from '../../components/more/more.component';
+import { BackModalComponent } from '../../components/back-modal/back-modal.component';
 
 @NgModule({
   imports: [

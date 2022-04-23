@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Language } from 'src/app/types/language.type';
+import { Language } from '../../types/language.type';
 import { Storage } from '@capacitor/storage';
 import { TranslateService } from '@ngx-translate/core';
 @Injectable({

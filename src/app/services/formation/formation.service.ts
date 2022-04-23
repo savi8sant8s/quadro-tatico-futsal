@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { TeamId } from 'src/app/enums/team-id.enum';
-import { Formation } from 'src/app/types/formation.type';
+import { TeamId } from '../../enums/team-id.enum';
+import { Formation } from '../../types/formation.type';
 import { Storage } from '@capacitor/storage';
 import { Subject } from 'rxjs';
 import { EventsService } from '../events/events.service';

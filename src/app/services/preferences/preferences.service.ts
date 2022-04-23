@@ -3,7 +3,6 @@ import { Formation } from '../../types/formation.type';
 import { Theme } from '../../types/theme.type';
 import { Storage } from '@capacitor/storage';
 import { TranslateService} from '@ngx-translate/core';
-import { ModalController } from '@ionic/angular';
 import { LanguagesService } from '../languages/languages.service';
 
 @Injectable({
@@ -13,7 +12,6 @@ export class PreferencesService {
 
   constructor(
     private translateService: TranslateService,
-    private modalCtrl: ModalController,
     private languagesService: LanguagesService
   ) { }
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@capacitor/storage';
-import { Theme } from 'src/app/types/theme.type';
+import { Theme } from '../../types/theme.type';
 import { EventsService } from '../events/events.service';
 
 @Injectable({
