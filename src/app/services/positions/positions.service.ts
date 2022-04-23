@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Platform } from '@ionic/angular';
-import { FormationPositions } from 'src/app/types/formation-positions.type';
+import { FormationPositions } from '../../types/formation-positions.type';
 
 @Injectable({
   providedIn: 'root'

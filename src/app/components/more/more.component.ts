@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService} from '@ngx-translate/core';
-import { LanguagesService } from 'src/app/services/languages/languages.service';
+import { LanguagesService } from '../../services/languages/languages.service';
 import { Language } from '../../types/language.type';
 import { InAppBrowser } from '@awesome-cordova-plugins/in-app-browser/ngx';
 import { App } from '@capacitor/app';

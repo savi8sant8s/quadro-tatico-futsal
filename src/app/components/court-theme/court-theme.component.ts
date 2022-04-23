@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { ModalController } from '@ionic/angular';
-import { Theme } from 'src/app/types/theme.type';
+import { Theme } from '../../types/theme.type';
 import { CourtThemeService } from '../../services/court-theme/court-theme.service';
 
 @Component({
