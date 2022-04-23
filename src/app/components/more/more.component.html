@@ -8,7 +8,7 @@
   </div>
   <ion-item color="none" lines="none" class="ion-margin-top">
     <ion-label position="stacked">{{'LANGUAGE_SELECT_TITLE' | translate}}</ion-label>
-    <ion-select class="select-white" [okText]="confirmText" [cancelText]="cancelText" [(ngModel)]="languageSelected" (ionChange)="onChangeLanguage()">
+    <ion-select [okText]="confirmText" [cancelText]="cancelText" [(ngModel)]="languageSelected" (ionChange)="onChangeLanguage()">
       <ion-select-option *ngFor="let language of languages" [value]="language">{{language.name}}</ion-select-option>
     </ion-select>
   </ion-item>

@@ -4,7 +4,6 @@ import { Theme } from '../../types/theme.type';
 import { Storage } from '@capacitor/storage';
 import { TranslateService} from '@ngx-translate/core';
 import { ModalController } from '@ionic/angular';
-import { WelcomeComponent } from 'src/app/components/welcome/welcome.component';
 import { LanguagesService } from '../languages/languages.service';
 
 @Injectable({
@@ -20,14 +19,9 @@ export class PreferencesService {
 
   async setDefaultPreferences() {
     const { value: firstAccess } = await Storage.get({ key: 'first-access' });
-    const { value: acceptedTerms } = await Storage.get({key: 'accepted-terms'});
     const { value: language } = await Storage.get({key: 'language'});
 
     await this.languagesService.setCurrentLanguage(language ? language : 'pt-br');
-
-    if (!acceptedTerms){
-      this.showWelcomeModal();
-    }
 
     if (!firstAccess) {
       await this.setDefaultFormations();
@@ -37,15 +31,6 @@ export class PreferencesService {
 
     this.translateService.addLangs(this.languagesService.getLanguagesCodes());
   }
-
-  async showWelcomeModal(){
-    const modal = await this.modalCtrl.create({
-      component: WelcomeComponent,
-      cssClass: 'welcome-modal',
-      backdropDismiss: false,
-    });
-    modal.present();
-  };
 
   async setDefaultFormations(){
     const teamAFormation: Formation = {

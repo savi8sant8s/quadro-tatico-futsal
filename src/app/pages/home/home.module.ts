@@ -14,7 +14,6 @@ import { CourtComponent } from '../../components/court/court.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { MoreComponent } from 'src/app/components/more/more.component';
 import { BackModalComponent } from 'src/app/components/back-modal/back-modal.component';
-import { WelcomeComponent } from 'src/app/components/welcome/welcome.component';
 
 @NgModule({
   imports: [
@@ -33,8 +32,7 @@ import { WelcomeComponent } from 'src/app/components/welcome/welcome.component';
     PlayerThemeComponent,
     CourtThemeComponent,
     MoreComponent,
-    BackModalComponent,
-    WelcomeComponent
+    BackModalComponent
 ]
 })
 export class HomePageModule {}

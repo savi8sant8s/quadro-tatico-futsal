@@ -6,6 +6,7 @@
       <ion-col class="container" size="6" *ngFor="let courtTheme of courtThemes">
         <div (click)="onSelect(courtTheme)" [class]="courtTheme.cssClass" class="court" [ngClass]="{'selected': courtTheme.cssClass === courtThemeSelected.cssClass}">
           <div class="middle-line"></div>
+          <div class="circle-middle-line"></div>
         </div>
       </ion-col>
     </ion-row>

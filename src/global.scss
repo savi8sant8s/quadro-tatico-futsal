@@ -28,6 +28,7 @@
 @font-face {   
     font-family: 'Oswald-Regular';
     src: url('./assets/fonts/Oswald-Regular.ttf');
+    color: var(--ion-color-white) !important;
 }
 
 ion-content{ 
@@ -86,12 +87,6 @@ ion-icon, ion-select, .color-white{
         background: var(--ion-color-black);
         @include player-theme-border;
     }
-}
-
-.welcome-modal {
-    --height: 80%;
-    --width: 80%;
-    --border-radius: 0.5rem;
 }
 
 .panel-modal {
