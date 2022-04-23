@@ -7,12 +7,12 @@
     "TEAM_B": "Team B",
     "BACK": "Back",
     "LANGUAGE_SELECT_TITLE": "Select the language",
-    "CREATED_BY": "Created by Sávio Santos",
     "USE_TERMS_TITLE": "Use terms",
     "PRO_VERSION_TITLE": "Pro version (coming soon)",
     "CONFIRM": "Confirm",
     "CANCEL": "Cancel",
     "TERMS_MESSAGE": "By clicking Confirm, you agree to the terms of use:",
     "TERMS_LINK_TITLE": "Use Terms and Privacy Policy",
-    "QUIT": "Quit"
+    "QUIT": "Quit",
+    "CONTACT_US": "Contact us"
 }

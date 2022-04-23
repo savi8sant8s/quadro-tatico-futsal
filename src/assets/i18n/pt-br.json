@@ -7,12 +7,12 @@
     "TEAM_B": "Time B",
     "BACK": "Voltar",
     "LANGUAGE_SELECT_TITLE": "Selecione o idioma",
-    "CREATED_BY": "Criado por Sávio Santos",
     "USE_TERMS_TITLE": "Termos de uso",
     "PRO_VERSION_TITLE": "Versão Pro (em breve)",
     "CONFIRM": "Confirmar",
     "CANCEL": "Cancelar",
     "TERMS_MESSAGE": "Ao clicar em Confirmar, você concorda com os termos de uso:",
     "TERMS_LINK_TITLE": "Termos de uso e política de privacidade",
-    "QUIT": "Sair"
+    "QUIT": "Sair",
+    "CONTACT_US": "Contate-nos"
 }

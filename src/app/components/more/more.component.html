@@ -18,17 +18,17 @@
   </ion-item>
   <ion-item (click)="onOpenProVersion()" color="none" lines="none" class="ion-margin-top">
     <ion-label color="light">{{'PRO_VERSION_TITLE' | translate}}</ion-label>
-    <ion-badge color="success" slot="end">
+    <ion-badge color="warning" slot="end">
       <ion-icon size="small" class="white-icon" name="logo-android"></ion-icon>
     </ion-badge>
   </ion-item>
-  <ion-item color="none" lines="none" class="ion-margin-top">
-    <ion-label color="light" >{{'CREATED_BY' | translate}}</ion-label>
-    <ion-badge color="primary" slot="end">
-      <ion-icon size="small" class="white-icon" name="logo-github"></ion-icon>
+  <ion-item (click)="onCreatedBy()" color="none" lines="none" class="ion-margin-top">
+    <ion-label color="light" >{{'CONTACT_US' | translate}}</ion-label>
+    <ion-badge color="danger" slot="end">
+      <ion-icon size="small" class="white-icon" name="mail-outline"></ion-icon>
     </ion-badge>
   </ion-item>
-  <ion-item color="none" lines="none" class="ion-margin-top">
+  <ion-item (click)="onExitApp()" color="none" lines="none" class="ion-margin-top">
     <ion-label color="light">{{'QUIT' | translate}}</ion-label>
   </ion-item>
 </ion-content>

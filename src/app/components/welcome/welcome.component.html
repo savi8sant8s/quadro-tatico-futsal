@@ -6,8 +6,8 @@
     </ion-select>
   </ion-item>
   <p class="ion-text-center ion-margin-top">{{'TERMS_MESSAGE' | translate}}</p>
-  <div class="ion-text-center">
-    <a href="https://www.google.com" target="_blank">{{'TERMS_LINK_TITLE' | translate}}</a>
+  <div (click)="onOpenTerms()" class="ion-text-center">
+    <ion-label color="primary" target="_blank">{{'TERMS_LINK_TITLE' | translate}}</ion-label>
   </div>
   <ion-button (click)="onAcceptTerms()" color="success" expand="block">{{'CONFIRM' | translate}}</ion-button>
   </ion-content>  
