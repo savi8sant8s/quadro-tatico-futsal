@@ -4,13 +4,13 @@
   <h6>{{'TEAM_A' | translate}}</h6>
   <div class="container">
     <div *ngFor="let playerTheme of playerThemes" (click)="onSelect('a', playerTheme)" [class]="playerTheme.cssClass" class="player" [ngClass]="{'selected': playerTheme.cssClass === playerThemeTeamA.cssClass}">
-      <ion-icon color="light" name="football-outline" size="large"></ion-icon>
+      <ion-icon name="football-outline" size="large"></ion-icon>
     </div>
   </div>
   <h6>{{'TEAM_B' | translate}}</h6>
   <div class="container">
       <div *ngFor="let playerTheme of playerThemes" (click)="onSelect('b', playerTheme)" [class]="playerTheme.cssClass" class="player" [ngClass]="{'selected': playerTheme.cssClass === playerThemeTeamB.cssClass}">
-        <ion-icon color="light" name="football-outline" size="large"></ion-icon>
+        <ion-icon name="football-outline" size="large"></ion-icon>
       </div>
   </div>
 </ion-content>

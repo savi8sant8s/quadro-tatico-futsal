@@ -1,7 +1,13 @@
 <ion-content class="bg-theme-6 ion-padding">
   <app-back-modal></app-back-modal>
   <h3 class="ion-text-center">{{'COURT_THEME_TITLE' | translate}}</h3>
-  <div class="container" *ngFor="let courtTheme of courtThemes">
-    <div (click)="onSelect(courtTheme)" [class]="courtTheme.cssClass" class="court" [ngClass]="{'selected': courtTheme.cssClass === courtThemeSelected.cssClass}"></div>
-  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="container" size="6" *ngFor="let courtTheme of courtThemes">
+        <div (click)="onSelect(courtTheme)" [class]="courtTheme.cssClass" class="court" [ngClass]="{'selected': courtTheme.cssClass === courtThemeSelected.cssClass}">
+          <div class="middle-line"></div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
