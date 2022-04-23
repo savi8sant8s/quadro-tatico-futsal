@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { TranslateService} from '@ngx-translate/core';
 import { LanguagesService } from 'src/app/services/languages/languages.service';
 import { Language } from '../../types/language.type';
+import { InAppBrowser } from '@awesome-cordova-plugins/in-app-browser/ngx';
+import { App } from '@capacitor/app';
 
 @Component({
   selector: 'app-more',
@@ -16,7 +18,8 @@ export class MoreComponent {
 
   constructor(
     private translateService: TranslateService,
-    private languagesService: LanguagesService
+    private languagesService: LanguagesService,
+    private iab: InAppBrowser
   ) {
     this.languages = this.languagesService.getLanguages();
     this.languageSelected = this.languagesService.getCurrentLanguage();
@@ -37,10 +40,20 @@ export class MoreComponent {
   }
 
   onOpenTerms(){
-
+    const currentLanguage = this.languageSelected.code;
+    const urlTerms = `https://github.com/prancheta-apps/termos/blob/main/quadro-tatico-futsal-${currentLanguage}.md`;
+    this.iab.create(urlTerms, '_system');
   }
 
   onOpenProVersion(){
 
+  }
+
+  onCreatedBy(){
+    this.iab.create('mailto:saviosa08@gmail.com', '_system');
+  }
+
+  onExitApp(){
+    App.exitApp();
   }
 }

@@ -21,15 +21,16 @@ export class PanelComponent implements OnInit{
   }
 
    ngOnInit() {
-      this.options.push({imageUrl: 'assets/options/formation.png', component: FormationComponent});
-      this.options.push({imageUrl: 'assets/options/player.png', component: PlayerThemeComponent});
-      this.options.push({imageUrl: 'assets/options/court.png', component: CourtThemeComponent});
-      this.options.push({imageUrl: 'assets/options/more.png', component: MoreComponent});
+      this.options.push({imageUrl: 'assets/options/formation.svg', component: FormationComponent});
+      this.options.push({imageUrl: 'assets/options/player.svg', component: PlayerThemeComponent});
+      this.options.push({imageUrl: 'assets/options/court.svg', component: CourtThemeComponent});
+      this.options.push({imageUrl: 'assets/options/more.svg', component: MoreComponent});
    }
 
    async onOpenModal(component: any) {
      const modal = await this.modalCtrl.create({
         component,
+        cssClass: 'panel-modal'
      });
       modal.present();
    }

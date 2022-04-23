@@ -10,7 +10,11 @@
     border-radius: 100%;
     border: 0.1rem solid var(--ion-color-white);
     opacity: 0.4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 
 .selected {
     border: 0.4rem solid var(--ion-color-white);

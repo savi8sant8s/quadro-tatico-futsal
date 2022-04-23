@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { createTranslateLoader } from './createTranslateLoader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { InAppBrowser } from '@awesome-cordova-plugins/in-app-browser/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,7 +29,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
       }
     })
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, InAppBrowser],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -2,7 +2,7 @@
 @mixin court-area {
     width: 50%;
     height: 6rem; 
-    border: 0.5rem solid white;
+    border: 0.5rem solid var(--ion-color-white);
     border-top-left-radius: 100%;  
     border-top-right-radius: 100%;
     border-bottom: 0rem;
@@ -26,7 +26,7 @@
 
 .middle-line {
     position: absolute;
-    background: white;
+    background: var(--ion-color-white);
     width: 100%;
     height: 0.5rem;
     top: 50%;
@@ -36,7 +36,7 @@
 
 .circle-middle-line {
     position: absolute;
-    background: white;
+    background: var(--ion-color-white);
     width: 3rem;
     height: 3rem;
     border-radius: 100%;

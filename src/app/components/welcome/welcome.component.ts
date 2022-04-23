@@ -4,6 +4,7 @@ import { LanguagesService } from 'src/app/services/languages/languages.service';
 import { Language } from 'src/app/types/language.type';
 import { Storage } from '@capacitor/storage';
 import { ModalController } from '@ionic/angular';
+import { InAppBrowser } from '@awesome-cordova-plugins/in-app-browser/ngx';
 
 @Component({
   selector: 'app-welcome',
@@ -19,7 +20,8 @@ export class WelcomeComponent {
   constructor(
     private translateService: TranslateService,
     private languagesService: LanguagesService,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private iab: InAppBrowser
   ) {
     this.languages = this.languagesService.getLanguages();
     this.languageSelected = this.languagesService.getCurrentLanguage();
@@ -37,6 +39,12 @@ export class WelcomeComponent {
   async onChangeLanguage(){
     await this.languagesService.setCurrentLanguage(this.languageSelected.code);
     await this.getTexts();
+  }
+
+  onOpenTerms(){
+    const currentLanguage = this.languageSelected.code;
+    const urlTerms = `https://github.com/savi8sant8s/savi8sant8s/blob/main/quadro-tatico-futsal-termos-${currentLanguage}.md`;
+    this.iab.create(urlTerms, '_system');
   }
 
   async onAcceptTerms(){
