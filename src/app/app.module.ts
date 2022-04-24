@@ -15,9 +15,7 @@ import { createTranslateLoader } from './createTranslateLoader';
   entryComponents: [],
   imports: [
     BrowserModule,
-    IonicModule.forRoot({
-      mode: 'ios',
-    }),
+    IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
     TranslateModule.forRoot({
