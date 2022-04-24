@@ -1,5 +1,8 @@
-import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { AfterViewInit } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { DomController, GestureController, Platform } from '@ionic/angular';
+
+import { Position } from '../../types';
 
 @Component({
   selector: 'app-player',
@@ -13,21 +16,18 @@ export class PlayerComponent implements AfterViewInit {
   @Input() y = 0;
   @Input() cssClass = 'player-theme-1';
 
-  constructor(
-    private gestureCtrl: GestureController,
-    private domCtrl: DomController,
-    private platform: Platform) { }
+  constructor(private gestureCtrl: GestureController, private domCtrl: DomController, private platform: Platform) {}
 
-  async ngAfterViewInit() {
+  async ngAfterViewInit(): Promise<void> {
     await this.domCtrl.read(() => {
       this.platform.ready().then(() => {
-      this.setupGesture(this.platform.width(), this.platform.height());
+        this.setupGesture(this.platform.width(), this.platform.height());
       });
     });
   }
 
-  setupGesture(width, height) {
-    if (this.x !== 0 && this.y !== 0){
+  setupGesture(width: number, height: number): void {
+    if (this.x !== 0 && this.y !== 0) {
       const { x, y } = this.getValidPosition(width, height, this.x, this.y);
       this.setNewPosition(x, y);
     }
@@ -35,7 +35,7 @@ export class PlayerComponent implements AfterViewInit {
       el: this.player.nativeElement,
       threshold: 0,
       gestureName: 'move',
-      onMove: ev => {
+      onMove: (ev) => {
         const { x, y } = this.getValidPosition(width, height, ev.currentX, ev.currentY);
         this.setNewPosition(x, y);
       },
@@ -43,7 +43,7 @@ export class PlayerComponent implements AfterViewInit {
     moveGesture.enable(true);
   }
 
-  getValidPosition(width, height, x, y) {
+  getValidPosition(width: number, height: number, x: number, y: number): Position {
     if (x < 30) {
       x = 30;
     }
@@ -59,8 +59,7 @@ export class PlayerComponent implements AfterViewInit {
     return { x, y };
   }
 
-  setNewPosition(x, y) {
-    this.player.nativeElement.style.transform = `translate(${x-30}px, ${y-30}px)`;
+  setNewPosition(x: number, y: number): void {
+    this.player.nativeElement.style.transform = `translate(${x - 30}px, ${y - 30}px)`;
   }
 }
-

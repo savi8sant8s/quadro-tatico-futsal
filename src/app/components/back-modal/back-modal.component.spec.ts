@@ -1,4 +1,5 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { BackModalComponent } from './back-modal.component';
@@ -9,8 +10,8 @@ describe('BackModalComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ BackModalComponent ],
-      imports: [IonicModule.forRoot()]
+      declarations: [BackModalComponent],
+      imports: [IonicModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(BackModalComponent);

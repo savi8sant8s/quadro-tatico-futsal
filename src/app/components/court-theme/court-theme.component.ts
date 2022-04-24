@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { Theme } from '../../types/theme.type';
-import { CourtThemeService } from '../../services/court-theme/court-theme.service';
+
+import { CourtThemeService } from '../../services';
+import { Theme } from '../../types';
 
 @Component({
   selector: 'app-court-theme',
@@ -8,22 +9,18 @@ import { CourtThemeService } from '../../services/court-theme/court-theme.servic
   styleUrls: ['./court-theme.component.scss'],
 })
 export class CourtThemeComponent {
-  courtThemes: Array<Theme> = new Array<Theme>();
+  courtThemes: Theme[] = new Array<Theme>();
   courtThemeSelected: Theme;
 
-  constructor(
-    private courtThemeService: CourtThemeService
-  ) {
-   }
+  constructor(private courtThemeService: CourtThemeService) {}
 
-  async ionViewWillEnter() {
+  async ionViewWillEnter(): Promise<void> {
     this.courtThemes = this.courtThemeService.getThemes();
     this.courtThemeSelected = await this.courtThemeService.getThemePreferences();
   }
 
-  onSelect(courtTheme: Theme){
+  onSelect(courtTheme: Theme): void {
     this.courtThemeService.setThemePreferences(courtTheme);
     this.courtThemeSelected = courtTheme;
   }
-
 }

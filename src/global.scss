@@ -34,10 +34,6 @@ ion-content{
     font-family: 'Oswald-Regular' !important;
 }
 
-ion-icon, ion-select, .color-white{
-    color: var(--ion-color-white) !important;
-}
-
 .bg-theme {
     &-1{
         --background: var(--ion-color-green);

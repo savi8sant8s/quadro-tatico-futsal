@@ -7,12 +7,9 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./back-modal.component.scss'],
 })
 export class BackModalComponent {
+  constructor(private modalCtrl: ModalController) {}
 
-  constructor(
-    private modalCtrl: ModalController
-  ) {}
-
-  async onClose(){
+  async onClose(): Promise<void> {
     await this.modalCtrl.dismiss();
   }
 }

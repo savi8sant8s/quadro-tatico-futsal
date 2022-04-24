@@ -1,4 +1,5 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { PanelComponent } from './panel.component';
@@ -9,8 +10,8 @@ describe('PanelComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ PanelComponent ],
-      imports: [IonicModule.forRoot()]
+      declarations: [PanelComponent],
+      imports: [IonicModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(PanelComponent);

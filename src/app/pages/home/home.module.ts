@@ -1,28 +1,25 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HomePage } from './home.page';
+import { IonicModule } from '@ionic/angular';
+import { TranslateModule } from '@ngx-translate/core';
+
+import {
+  BackModalComponent,
+  CourtThemeComponent,
+  CourtComponent,
+  FormationComponent,
+  MoreComponent,
+  PanelComponent,
+  PlayerThemeComponent,
+  PlayerComponent,
+} from '../../components';
 
 import { HomePageRoutingModule } from './home-routing.module';
-import { PanelComponent } from '../../components/panel/panel.component';
-import { PlayerComponent } from '../../components/player/player.component';
-import { FormationComponent } from '../../components/formation/formation.component';
-import { PlayerThemeComponent } from '../../components/player-theme/player-theme.component';
-import { CourtThemeComponent } from '../../components/court-theme/court-theme.component';
-import { CourtComponent } from '../../components/court/court.component';
-import { TranslateModule } from '@ngx-translate/core';
-import { MoreComponent } from '../../components/more/more.component';
-import { BackModalComponent } from '../../components/back-modal/back-modal.component';
+import { HomePage } from './home.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    HomePageRoutingModule,
-    TranslateModule
-  ],
+  imports: [CommonModule, FormsModule, IonicModule, HomePageRoutingModule, TranslateModule],
   declarations: [
     HomePage,
     PanelComponent,
@@ -32,7 +29,7 @@ import { BackModalComponent } from '../../components/back-modal/back-modal.compo
     PlayerThemeComponent,
     CourtThemeComponent,
     MoreComponent,
-    BackModalComponent
-]
+    BackModalComponent,
+  ],
 })
 export class HomePageModule {}
