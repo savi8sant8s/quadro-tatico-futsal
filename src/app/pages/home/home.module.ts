@@ -13,6 +13,7 @@ import {
   PanelComponent,
   PlayerThemeComponent,
   PlayerComponent,
+  DrawScratchComponent,
 } from '../../components';
 
 import { HomePageRoutingModule } from './home-routing.module';
@@ -30,6 +31,7 @@ import { HomePage } from './home.page';
     CourtThemeComponent,
     MoreComponent,
     BackModalComponent,
+    DrawScratchComponent,
   ],
 })
 export class HomePageModule {}
