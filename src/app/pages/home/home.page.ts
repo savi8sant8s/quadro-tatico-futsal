@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { IonHeader } from '@ionic/angular';
 
 import { TeamId } from '../../enums';
 import {
@@ -34,14 +35,14 @@ export class HomePage {
     await this.getCourtTheme();
     await this.getPlayerThemes();
     await this.getTeamsPositions();
-    this.eventsService.subscribe('court-theme:changed', () => {
-      this.getCourtTheme();
+    this.eventsService.subscribe('court-theme:changed', async () => {
+      await this.getCourtTheme();
     });
     this.eventsService.subscribe('formation:changed', async () => {
       await this.getTeamsPositions();
     });
     this.eventsService.subscribe('player-theme:changed', async () => {
-      this.getPlayerThemes();
+      await this.getPlayerThemes();
     });
   }
 

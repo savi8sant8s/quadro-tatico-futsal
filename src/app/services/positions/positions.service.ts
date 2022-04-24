@@ -33,7 +33,7 @@ export class PositionsService {
     return {
       name: '1-2-2',
       positions: [
-        { x: width * 0.5, y: height * 0.075 },
+        { x: width * 0.5, y: height * 0.1 },
         { x: width * 0.25, y: height * 0.2 },
         { x: width * 0.75, y: height * 0.2 },
         { x: width * 0.25, y: height * 0.35 },
@@ -59,7 +59,7 @@ export class PositionsService {
     return {
       name: '1-3-1',
       positions: [
-        { x: width * 0.5, y: height * 0.075 },
+        { x: width * 0.5, y: height * 0.1 },
         { x: width * 0.25, y: height * 0.2 },
         { x: width * 0.5, y: height * 0.2 },
         { x: width * 0.75, y: height * 0.2 },
@@ -85,7 +85,7 @@ export class PositionsService {
     return {
       name: '1-1-1-2',
       positions: [
-        { x: width * 0.5, y: height * 0.075 },
+        { x: width * 0.5, y: height * 0.1 },
         { x: width * 0.5, y: height * 0.2 },
         { x: width * 0.5, y: height * 0.3 },
         { x: width * 0.25, y: height * 0.37 },
@@ -111,7 +111,7 @@ export class PositionsService {
     return {
       name: '1-1-2-1',
       positions: [
-        { x: width * 0.5, y: height * 0.075 },
+        { x: width * 0.5, y: height * 0.1 },
         { x: width * 0.5, y: height * 0.2 },
         { x: width * 0.25, y: height * 0.25 },
         { x: width * 0.75, y: height * 0.25 },

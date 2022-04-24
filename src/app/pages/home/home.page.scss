@@ -1,3 +1,5 @@
+@import "../../styles/_mixins.scss";
+
 ion-content {
-  border: 0.5rem solid var(--ion-color-white);
+  @include custom-white-border(0.25rem);
 }

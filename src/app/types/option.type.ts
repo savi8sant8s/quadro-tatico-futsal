@@ -1,4 +1,4 @@
 export type Option = {
-  imageUrl: string;
+  name: string;
   component: any;
 };

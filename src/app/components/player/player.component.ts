@@ -1,7 +1,6 @@
 import { AfterViewInit } from '@angular/core';
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { DomController, GestureController, Platform } from '@ionic/angular';
-
 import { Position } from '../../types';
 
 @Component({
@@ -16,7 +15,10 @@ export class PlayerComponent implements AfterViewInit {
   @Input() y = 0;
   @Input() cssClass = 'player-theme-1';
 
-  constructor(private gestureCtrl: GestureController, private domCtrl: DomController, private platform: Platform) {}
+  constructor(
+    private gestureCtrl: GestureController,
+    private domCtrl: DomController,
+    private platform: Platform) {}
 
   async ngAfterViewInit(): Promise<void> {
     await this.domCtrl.read(() => {
@@ -50,11 +52,11 @@ export class PlayerComponent implements AfterViewInit {
     if (y < 30) {
       y = 30;
     }
-    if (x > width - 35) {
-      x = width - 35;
+    if (x > width - 25) {
+      x = width - 25;
     }
-    if (y > height - 120) {
-      y = height - 120;
+    if (y > height - 90) {
+      y = height - 90;
     }
     return { x, y };
   }

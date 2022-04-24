@@ -23,13 +23,14 @@ export class PlayerThemeComponent {
   }
 
   onSelect(team: string, playerTheme: Theme): void {
+    let teamId: TeamId;
     if (team === 'a') {
       this.playerThemeTeamA = playerTheme;
-      team = TeamId.a;
+      teamId = TeamId.a;
     } else if (team === 'b') {
       this.playerThemeTeamB = playerTheme;
-      team = TeamId.b;
+      teamId = TeamId.b;
     }
-    this.playerThemeService.setPlayerThemePreferences(TeamId[team], playerTheme);
+    this.playerThemeService.setPlayerThemePreferences(teamId, playerTheme);
   }
 }

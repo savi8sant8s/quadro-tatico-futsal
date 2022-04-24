@@ -17,10 +17,10 @@ export class PanelComponent implements OnInit {
   constructor(private modalCtrl: ModalController) {}
 
   ngOnInit(): void {
-    this.options.push({ imageUrl: 'assets/options/formation.svg', component: FormationComponent });
-    this.options.push({ imageUrl: 'assets/options/player.svg', component: PlayerThemeComponent });
-    this.options.push({ imageUrl: 'assets/options/court.svg', component: CourtThemeComponent });
-    this.options.push({ imageUrl: 'assets/options/more.svg', component: MoreComponent });
+    this.options.push({ name: 'easel-outline', component: FormationComponent });
+    this.options.push({ name: 'football-outline', component: PlayerThemeComponent });
+    this.options.push({ name: 'color-palette-outline', component: CourtThemeComponent });
+    this.options.push({ name: 'ellipsis-horizontal-circle-outline', component: MoreComponent });
   }
 
   async onOpenModal(component: any): Promise<void> {

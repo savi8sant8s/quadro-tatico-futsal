@@ -22,13 +22,14 @@ export class FormationComponent {
   }
 
   onSelect(team: string, formation: Formation): void {
+    let teamId: TeamId;
     if (team === 'a') {
       this.formationTeamA = formation;
-      team = TeamId.a;
+      teamId = TeamId.a;
     } else if (team === 'b') {
       this.formationTeamB = formation;
-      team = TeamId.b;
+      teamId = TeamId.b;
     }
-    this.formationService.setFormationPreferences(TeamId[team], formation);
+    this.formationService.setFormationPreferences(teamId, formation);
   }
 }

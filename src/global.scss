@@ -24,6 +24,7 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+@import "./app/styles/_mixins.scss";
 
 @font-face {   
     font-family: 'Oswald-Regular';
@@ -32,6 +33,11 @@
 
 ion-content{ 
     font-family: 'Oswald-Regular' !important;
+}
+
+ion-label, ion-icon, ion-note, h1, h3, h6{
+    --color: var(--ion-color-white) !important;
+    color: var(--ion-color-white) !important;
 }
 
 .bg-theme {
@@ -61,26 +67,22 @@ ion-content{
     }
 }
 
-@mixin player-theme-border{
-    border: 0.2rem solid var(--ion-color-white);
-}
-
 .player-theme {
     &-1 {
         background: var(--ion-color-green);
-        @include player-theme-border;
+        @include custom-white-border(0.2rem);
     }
     &-2 {
         background: var(--ion-color-yellow);
-        @include player-theme-border;
+        @include custom-white-border(0.2rem);
     }
     &-3 {
         background: var(--ion-color-orange);
-        @include player-theme-border;
+        @include custom-white-border(0.2rem);
     }
     &-4 {
         background: var(--ion-color-black);
-        @include player-theme-border;
+        @include custom-white-border(0.2rem);
     }
 }
 

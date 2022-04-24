@@ -1,0 +1,9 @@
+@mixin custom-white-border($size) {
+    border: $size solid var(--ion-color-white);
+}
+
+@mixin d-flex($justify-content){
+    display: flex;
+    align-items: center;
+    justify-content: $justify-content;
+}

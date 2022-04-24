@@ -1,14 +1,14 @@
+@import "../../styles/_mixins.scss";
+
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include d-flex(center);
 }
 
 .court {
     width: 5rem;
     height: 8rem;
     border-radius: 5%;
-    border: 0.1rem solid var(--ion-color-white);
+    @include custom-white-border(0.1rem);
     opacity: 0.4;
 }
 
@@ -34,6 +34,6 @@
 }
 
 .selected {
-    border: 0.4rem solid var(--ion-color-white);
+    @include custom-white-border(0.4rem);
     opacity: 1;
 }
