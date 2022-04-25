@@ -15,10 +15,7 @@ export class PlayerComponent implements AfterViewInit {
   @Input() y = 0;
   @Input() cssClass = 'player-theme-1';
 
-  constructor(
-    private gestureCtrl: GestureController,
-    private domCtrl: DomController,
-    private platform: Platform) {}
+  constructor(private gestureCtrl: GestureController, private domCtrl: DomController, private platform: Platform) {}
 
   async ngAfterViewInit(): Promise<void> {
     await this.domCtrl.read(() => {

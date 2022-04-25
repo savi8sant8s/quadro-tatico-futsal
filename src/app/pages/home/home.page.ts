@@ -1,5 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
-import { IonHeader } from '@ionic/angular';
+import { Component } from '@angular/core';
 
 import { TeamId } from '../../enums';
 import {
@@ -22,6 +21,7 @@ export class HomePage {
   playerThemeTeamA: Theme;
   playerThemeTeamB: Theme;
   courtTheme: Theme = { cssClass: 'bg-theme-1' };
+  clearOption = false;
 
   constructor(
     private courtThemeService: CourtThemeService,
