@@ -16,6 +16,6 @@
 }
 
 .selected {
-    @include custom-white-border(0.4rem);
+    @include custom-white-border(0.2rem);
     opacity: 1;
 }

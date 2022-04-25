@@ -17,7 +17,7 @@ export class PanelComponent implements OnInit {
 
   ngOnInit(): void {
     this.options.push({ name: 'easel-outline', component: FormationComponent });
-    this.options.push({ name: 'football-outline', component: PlayerThemeComponent });
+    this.options.push({ name: 'shirt-outline', component: PlayerThemeComponent });
     this.options.push({ name: 'color-palette-outline', component: CourtThemeComponent });
     this.options.push({ name: 'ellipsis-horizontal-circle-outline', component: MoreComponent });
   }
@@ -25,7 +25,6 @@ export class PanelComponent implements OnInit {
   async onOpenModal(component: any): Promise<void> {
     const modal = await this.modalCtrl.create({
       component,
-      cssClass: 'panel-modal',
     });
     modal.present();
   }

@@ -1,5 +1,5 @@
 @mixin custom-white-border($size) {
-    border: $size solid var(--ion-color-white);
+    border: $size solid var(--ion-color-black);
 }
 
 @mixin d-flex($justify-content){

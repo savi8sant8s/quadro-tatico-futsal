@@ -36,6 +36,11 @@ ion-content{
 }
 
 ion-label, ion-icon, ion-note, ion-select, h1, h3, h6{
+    --color: var(--ion-color-black) !important;
+    color: var(--ion-color-black) !important;
+}
+
+ion-icon {
     --color: var(--ion-color-white) !important;
     color: var(--ion-color-white) !important;
 }
@@ -65,6 +70,10 @@ ion-label, ion-icon, ion-note, ion-select, h1, h3, h6{
         --background: var(--ion-color-black);
         background: var(--ion-color-black);
     }
+    &-7{
+        --background: var(--ion-color-white);
+        background: var(--ion-color-white);
+    }
 }
 
 .player-theme {
@@ -84,12 +93,4 @@ ion-label, ion-icon, ion-note, ion-select, h1, h3, h6{
         background: var(--ion-color-black);
         @include custom-white-border(0.2rem);
     }
-}
-
-.panel-modal {
-    --height: 90%;
-    --width: 90%;
-    --border-radius: 0.5rem;
-    display: flex;
-    align-items: flex-end;
 }
