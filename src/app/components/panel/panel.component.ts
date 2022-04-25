@@ -1,5 +1,5 @@
 import { OnInit } from '@angular/core';
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 
 import { CourtThemeComponent, FormationComponent, MoreComponent, PlayerThemeComponent } from '../../components';
@@ -11,7 +11,6 @@ import { Option } from '../../types';
   styleUrls: ['./panel.component.scss'],
 })
 export class PanelComponent implements OnInit {
-  @Input() playerOptions = false;
   options: Option[] = new Array<Option>();
 
   constructor(private modalCtrl: ModalController) {}

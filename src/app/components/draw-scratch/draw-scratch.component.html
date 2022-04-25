@@ -1,16 +1,3 @@
-<ion-fab horizontal="end" slot="fixed">
-  <ion-fab-button size="small" color="primary">
-    <ion-icon name="color-wand-outline"></ion-icon>
-  </ion-fab-button>
-  <ion-fab-list side="bottom">
-    <ion-fab-button (click)="enablePen()" size="small" color="primary">
-      <ion-icon name="pencil-outline"></ion-icon>
-    </ion-fab-button>
-    <ion-fab-button (click)="clear()" size="small" color="primary">
-      <ion-icon name="backspace-outline"></ion-icon>
-    </ion-fab-button>
-  </ion-fab-list>
-</ion-fab>
 <canvas
   #drawScratch
   (touchstart)="handleStart($event)"

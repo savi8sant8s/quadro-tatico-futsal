@@ -9,8 +9,8 @@ describe('DrawScratchComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ DrawScratchComponent ],
-      imports: [IonicModule.forRoot()]
+      declarations: [DrawScratchComponent],
+      imports: [IonicModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(DrawScratchComponent);
