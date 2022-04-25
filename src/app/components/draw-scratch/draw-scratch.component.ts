@@ -43,4 +43,9 @@ export class DrawScratchComponent implements AfterViewInit {
     this.lastX = currentX;
     this.lastY = currentY;
   }
+
+  onClear(){
+    const ctx = this.canvasElement.getContext('2d');
+    ctx.clearRect(0, 0, this.canvasElement.width, this.canvasElement.height);
+  }
 }

@@ -1,3 +1,8 @@
+<ion-fab *ngIf="lastX || lastY" vertical="top" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="onClear()" size="small" color="medium">
+    <ion-icon name="backspace" size="small"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
 <canvas
   #drawScratch
   (touchstart)="handleStart($event)"

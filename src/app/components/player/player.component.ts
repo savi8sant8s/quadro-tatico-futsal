@@ -10,10 +10,13 @@ import { Position } from '../../types';
 })
 export class PlayerComponent implements AfterViewInit {
   @ViewChild('player', { read: ElementRef }) player: ElementRef;
-
+  @Input() goalkeeper = false;
   @Input() x = 0;
   @Input() y = 0;
   @Input() cssClass = 'player-theme-1';
+  lastOnStart = 0;
+  doubleClickTheshold = 500;
+  focusPlayer = false;
 
   constructor(private gestureCtrl: GestureController, private domCtrl: DomController, private platform: Platform) {}
 
@@ -33,7 +36,21 @@ export class PlayerComponent implements AfterViewInit {
     const moveGesture = this.gestureCtrl.create({
       el: this.player.nativeElement,
       threshold: 0,
-      gestureName: 'move',
+      gestureName: 'player',
+      onStart: (ev) => {
+        const now = Date.now();
+        if (Math.abs(now - this.lastOnStart) <= this.doubleClickTheshold) {
+          this.focusPlayer = !this.focusPlayer;
+          if (this.focusPlayer){
+            this.player.nativeElement.style.setProperty('filter', 'brightness(80%)');
+          } else {
+            this.player.nativeElement.style.setProperty('filter', 'brightness(100%)');
+          }
+          this.lastOnStart = 0;
+        } else {
+          this.lastOnStart = now;
+        }
+      },
       onMove: (ev) => {
         const { x, y } = this.getValidPosition(width, height, ev.currentX, ev.currentY);
         this.setNewPosition(x, y);
