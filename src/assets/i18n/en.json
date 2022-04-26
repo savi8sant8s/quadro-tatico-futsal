@@ -1,9 +1,16 @@
 {
+    "APP_TITLE": "Futsal Tactical Board",
     "FORMATION_TITLE": "Select a formation",
     "PLAYER_THEME_TITLE": "Select the color of the teams",
     "COURT_THEME_TITLE": "Select the color of the court",
     "TEAM_A": "Team A",
     "TEAM_B": "Team B",
     "BACK": "Back",
-    "LANGUAGE_SELECT_TILE": "Select the language"
+    "LANGUAGE_SELECT_TITLE": "Select the language",
+    "USE_TERMS_TITLE": "Use terms",
+    "PRO_VERSION_TITLE": "Pro version (coming soon)",
+    "CONFIRM": "Confirm",
+    "CANCEL": "Cancel",
+    "QUIT": "Quit",
+    "CONTACT_US": "Contact us"
 }

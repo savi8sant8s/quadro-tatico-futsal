@@ -77,12 +77,18 @@
 
   /** extra colors **/
   --ion-color-white: #f1f7ee;
-  --ion-color-yellow: #FFC300;
-  --ion-color-green:  #48C9B0;
+  --ion-color-yellow: #F7DB4F;
+  --ion-color-green:  #5bd6be;
   --ion-color-orange: #FF5733;
   --ion-color-gray: #b0bea9;
   --ion-color-black: #3b5249;
-  --ion-color-pink: #C70039;
+
+  --ion-color-special-red: #EC2049;
+  --ion-color-special-blue:#355C7D;
+  --ion-color-special-yellow: #FFC300;
+  --ion-color-special-green: #0ABDA0;
+
+
 }
 
 @media (prefers-color-scheme: dark) {

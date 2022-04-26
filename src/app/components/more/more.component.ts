@@ -1,31 +1,56 @@
 import { Component } from '@angular/core';
-import { ModalController } from '@ionic/angular';
-import { IClose } from 'src/app/interfaces/close.interface';
-import { TranslateService} from '@ngx-translate/core';
+import { InAppBrowser } from '@awesome-cordova-plugins/in-app-browser/ngx';
+import { App } from '@capacitor/app';
+import { TranslateService } from '@ngx-translate/core';
+
+import { LanguagesService } from '../../services';
+import { Language } from '../../types';
 
 @Component({
   selector: 'app-more',
   templateUrl: './more.component.html',
   styleUrls: ['./more.component.scss'],
 })
-export class MoreComponent implements IClose{
-  languages: Array<string>;
-  languageSelected: string;
+export class MoreComponent {
+  languages: Language[] = new Array<Language>();
+  languageSelected: Language;
+  confirmText: string;
+  cancelText: string;
 
   constructor(
-    private modalCtrl: ModalController,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private languagesService: LanguagesService,
+    private iab: InAppBrowser
   ) {
-    this.languageSelected = this.translateService.defaultLang;
-    this.languages = this.translateService.getLangs();
-    console.log(this.languages);
+    this.languages = this.languagesService.getLanguages();
+    this.languageSelected = this.languagesService.getCurrentLanguage();
   }
 
-  async onClose(){
-    await this.modalCtrl.dismiss();
+  async ionViewWillEnter(): Promise<void> {
+    await this.getTexts();
   }
 
-  onChangeLanguage(){
-    this.translateService.use(this.languageSelected);
+  async getTexts(): Promise<void> {
+    this.confirmText = await this.translateService.get('CONFIRM').toPromise();
+    this.cancelText = await this.translateService.get('CANCEL').toPromise();
+  }
+
+  async onChangeLanguage(): Promise<void> {
+    await this.languagesService.setCurrentLanguage(this.languageSelected.code);
+    await this.getTexts();
+  }
+
+  onOpenTerms(): void {
+    const currentLanguage = this.languageSelected.code;
+    const urlTerms = `https://github.com/prancheta-apps/termos/blob/main/quadro-tatico-futsal-${currentLanguage}.md`;
+    this.iab.create(urlTerms, '_system');
+  }
+
+  onContactUs(): void {
+    this.iab.create('mailto:saviosa08@gmail.com', '_system');
+  }
+
+  onExitApp(): void {
+    App.exitApp();
   }
 }

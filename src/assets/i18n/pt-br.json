@@ -1,9 +1,16 @@
 {
+    "APP_TITLE": "Quadro Tático de Futsal",
     "FORMATION_TITLE": "Selecione uma formação",
     "PLAYER_THEME_TITLE": "Selecione a cor dos times",
     "COURT_THEME_TITLE": "Selecione a cor da quadra",
     "TEAM_A": "Time A",
     "TEAM_B": "Time B",
     "BACK": "Voltar",
-    "LANGUAGE_SELECT_TILE": "Selecione o idioma"
+    "LANGUAGE_SELECT_TITLE": "Selecione o idioma",
+    "USE_TERMS_TITLE": "Termos de uso",
+    "PRO_VERSION_TITLE": "Versão Pro (em breve)",
+    "CONFIRM": "Confirmar",
+    "CANCEL": "Cancelar",
+    "QUIT": "Sair",
+    "CONTACT_US": "Contate-nos"
 }

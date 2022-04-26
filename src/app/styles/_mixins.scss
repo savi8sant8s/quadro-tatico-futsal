@@ -1,0 +1,15 @@
+@mixin custom-border($size, $black: false) {
+    border: $size solid;
+
+    @if $black {
+        border-color: var(--ion-color-black);
+    } @else {
+        border-color: var(--ion-color-white);
+    }
+}
+
+@mixin d-flex($justify-content){
+    display: flex;
+    align-items: center;
+    justify-content: $justify-content;
+}

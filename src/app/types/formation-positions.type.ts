@@ -1,6 +1,6 @@
-import { Position } from './position.type';
+import { Position } from './index';
 
 export type FormationPositions = {
-    name: string;
-    positions: Array<Position>;
+  name: string;
+  positions: Position[];
 };

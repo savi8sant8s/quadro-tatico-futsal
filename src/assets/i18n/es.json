@@ -1,9 +1,16 @@
 {
+    "APP_TITLE": "Tablero Tactico de Futsal",
     "FORMATION_TITLE": "Seleccione una formación",
     "PLAYER_THEME_TITLE": "Seleccione el color de los equipos",
     "COURT_THEME_TITLE": "Seleccione el color de la cancha",
     "TEAM_A": "Equip A",
     "TEAM_B": "Equip B",
     "BACK": "Tornar",
-    "LANGUAGE_SELECT_TILE": "Seleccione el idioma"
+    "LANGUAGE_SELECT_TITLE": "Seleccione el idioma",
+    "USE_TERMS_TITLE": "Condiciones de uso",
+    "PRO_VERSION_TITLE": "Versión Pro (pronto)",
+    "CONFIRM": "Confirmar",
+    "CANCEL": "Cancelar",
+    "QUIT": "Salir",
+    "CONTACT_US": "Contáctenos"
 }

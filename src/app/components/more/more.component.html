@@ -1,11 +1,36 @@
-<ion-content class="bg-theme-6 ion-padding">
-  <div class="ion-text-end" (click)="onClose()">
-    {{'BACK' | translate}}
+<ion-content class="bg-theme-5 ion-padding">
+  <app-back-modal></app-back-modal>
+  <div class="ion-text-center">
+    <h1>{{'APP_TITLE' | translate}}</h1>
+    <img width="50%" src="assets/logo.png"/>
+    <br>
+    <ion-note>1.0.0</ion-note>
   </div>
-  <ion-item class="ion-margin-top">
-    <ion-label position="stacked">{{'LANGUAGE_SELECT_TILE' | translate}}</ion-label>
-    <ion-select [(ngModel)]="languageSelected" (ionChange)="onChangeLanguage()">
-      <ion-select-option *ngFor="let language of languages" [value]="language">{{language | uppercase}}</ion-select-option>
+  <ion-item color="none" lines="none" class="ion-margin-top">
+    <ion-label position="stacked">{{'LANGUAGE_SELECT_TITLE' | translate}}</ion-label>
+    <ion-select [okText]="confirmText" [cancelText]="cancelText" [(ngModel)]="languageSelected" (ionChange)="onChangeLanguage()">
+      <ion-select-option *ngFor="let language of languages" [value]="language">{{language.name}}</ion-select-option>
     </ion-select>
+  </ion-item>
+  <ion-item (click)="onOpenTerms()" color="none" lines="none" class="ion-margin-top">
+    <ion-label>{{'USE_TERMS_TITLE' | translate}}</ion-label>
+    <ion-badge color="success" slot="end">
+      <ion-icon size="small" class="white-icon" name="document-text-outline"></ion-icon>
+    </ion-badge>
+  </ion-item>
+  <ion-item color="none" lines="none" class="ion-margin-top">
+    <ion-label>{{'PRO_VERSION_TITLE' | translate}}</ion-label>
+    <ion-badge color="warning" slot="end">
+      <ion-icon size="small" class="white-icon" name="logo-android"></ion-icon>
+    </ion-badge>
+  </ion-item>
+  <ion-item (click)="onContactUs()" color="none" lines="none" class="ion-margin-top">
+    <ion-label>{{'CONTACT_US' | translate}}</ion-label>
+    <ion-badge color="danger" slot="end">
+      <ion-icon size="small" class="white-icon" name="mail-outline"></ion-icon>
+    </ion-badge>
+  </ion-item>
+  <ion-item (click)="onExitApp()" color="none" lines="none" class="ion-margin-top">
+    <ion-label>{{'QUIT' | translate}}</ion-label>
   </ion-item>
 </ion-content>

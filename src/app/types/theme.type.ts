@@ -1,3 +1,3 @@
 export type Theme = {
-    cssClass: string;
+  cssClass: string;
 };

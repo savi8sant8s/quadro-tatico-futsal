@@ -1,3 +1,5 @@
+@import "../../styles/_mixins.scss";
+
 .player {
     position: absolute;
     width: 100vw;
@@ -5,6 +7,5 @@
     width: 3rem;
     height: 3rem;
     border-radius: 100%;
+    @include d-flex(center);
 }
-
-

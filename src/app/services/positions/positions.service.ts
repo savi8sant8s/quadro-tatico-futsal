@@ -1,17 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Platform } from '@ionic/angular';
-import { FormationPositions } from 'src/app/types/formation-positions.type';
+
+import { FormationPositions } from '../../types';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PositionsService {
-  private positionsTop: Array<FormationPositions> = new Array<FormationPositions>();
-  private positionsBottom: Array<FormationPositions> = new Array<FormationPositions>();
+  private positionsTop: FormationPositions[] = new Array<FormationPositions>();
+  private positionsBottom: FormationPositions[] = new Array<FormationPositions>();
 
-  constructor(
-    private platform: Platform
-  ) {
+  constructor(private platform: Platform) {
     this.platform.ready().then(() => {
       const width = this.platform.width();
       const height = this.platform.height();
@@ -19,7 +18,7 @@ export class PositionsService {
     });
   }
 
-  createPositions(width: number, height: number) {
+  createPositions(width: number, height: number): void {
     this.positionsTop.push(this.top122(width, height));
     this.positionsTop.push(this.top131(width, height));
     this.positionsTop.push(this.top1112(width, height));
@@ -30,116 +29,114 @@ export class PositionsService {
     this.positionsBottom.push(this.bottom1121(width, height));
   }
 
-  top122(width: number, height: number) {
+  top122(width: number, height: number): FormationPositions {
     return {
       name: '1-2-2',
       positions: [
-        { x: width * 0.5, y: height * 0.2 },
-        { x: width * 0.25, y: height * 0.25 },
-        { x: width * 0.75, y: height * 0.25},
-        { x: width * 0.25, y: height * 0.4 },
-        { x: width * 0.75, y: height * 0.4 },
-      ]
+        { x: width * 0.5, y: height * 0.1 },
+        { x: width * 0.25, y: height * 0.2 },
+        { x: width * 0.75, y: height * 0.2 },
+        { x: width * 0.25, y: height * 0.35 },
+        { x: width * 0.75, y: height * 0.35 },
+      ],
     };
   }
 
-  bottom122(width: number, height: number) {
+  bottom122(width: number, height: number): FormationPositions {
     return {
       name: '1-2-2',
       positions: [
         { x: width * 0.5, y: height * 0.8 },
-        { x: width * 0.25, y: height * 0.75 },
-        { x: width * 0.75, y: height * 0.75},
-        { x: width * 0.25, y: height * 0.6 },
-        { x: width * 0.75, y: height * 0.6 },
-      ]
+        { x: width * 0.25, y: height * 0.7 },
+        { x: width * 0.75, y: height * 0.7 },
+        { x: width * 0.25, y: height * 0.55 },
+        { x: width * 0.75, y: height * 0.55 },
+      ],
     };
   }
 
-  top131(width: number, height: number) {
+  top131(width: number, height: number): FormationPositions {
     return {
       name: '1-3-1',
       positions: [
+        { x: width * 0.5, y: height * 0.1 },
+        { x: width * 0.25, y: height * 0.2 },
         { x: width * 0.5, y: height * 0.2 },
-        { x: width * 0.25, y: height * 0.3 },
-        { x: width * 0.5, y: height * 0.3},
-        { x: width * 0.75, y: height * 0.3 },
-        { x: width * 0.5, y: height * 0.4 },
-      ]
+        { x: width * 0.75, y: height * 0.2 },
+        { x: width * 0.5, y: height * 0.35 },
+      ],
     };
   }
 
-  bottom131(width: number, height: number) {
+  bottom131(width: number, height: number): FormationPositions {
     return {
       name: '1-3-1',
       positions: [
         { x: width * 0.5, y: height * 0.8 },
         { x: width * 0.25, y: height * 0.7 },
-        { x: width * 0.5, y: height * 0.7},
+        { x: width * 0.5, y: height * 0.7 },
         { x: width * 0.75, y: height * 0.7 },
+        { x: width * 0.5, y: height * 0.55 },
+      ],
+    };
+  }
+
+  top1112(width: number, height: number): FormationPositions {
+    return {
+      name: '1-1-1-2',
+      positions: [
+        { x: width * 0.5, y: height * 0.1 },
+        { x: width * 0.5, y: height * 0.2 },
+        { x: width * 0.5, y: height * 0.3 },
+        { x: width * 0.25, y: height * 0.37 },
+        { x: width * 0.75, y: height * 0.37 },
+      ],
+    };
+  }
+
+  bottom1112(width: number, height: number): FormationPositions {
+    return {
+      name: '1-1-1-2',
+      positions: [
+        { x: width * 0.5, y: height * 0.8 },
+        { x: width * 0.5, y: height * 0.7 },
         { x: width * 0.5, y: height * 0.6 },
-      ]
+        { x: width * 0.25, y: height * 0.52 },
+        { x: width * 0.75, y: height * 0.52 },
+      ],
     };
   }
 
-  top1112(width: number, height: number) {
-    return {
-      name: '1-1-1-2',
-      positions: [
-        { x: width * 0.5, y: height * 0.2 },
-        { x: width * 0.5, y: height * 0.3 },
-        { x: width * 0.5, y: height * 0.4},
-        { x: width * 0.25, y: height * 0.45 },
-        { x: width * 0.75, y: height * 0.45 },
-      ]
-    };
-  }
-
-  bottom1112(width: number, height: number) {
-    return {
-      name: '1-1-1-2',
-      positions: [
-        { x: width * 0.5, y: height * 0.8 },
-        { x: width * 0.5, y: height * 0.7 },
-        { x: width * 0.5, y: height * 0.6},
-        { x: width * 0.25, y: height * 0.55 },
-        { x: width * 0.75, y: height * 0.55 },
-      ]
-    };
-
-
-  }
-
-  top1121(width: number, height: number) {
+  top1121(width: number, height: number): FormationPositions {
     return {
       name: '1-1-2-1',
       positions: [
+        { x: width * 0.5, y: height * 0.1 },
         { x: width * 0.5, y: height * 0.2 },
-        { x: width * 0.5, y: height * 0.3 },
-        { x: width * 0.25, y: height * 0.4 },
-        { x: width * 0.75, y: height * 0.4 },
-        { x: width * 0.5, y: height * 0.45},
-      ]
+        { x: width * 0.25, y: height * 0.28 },
+        { x: width * 0.75, y: height * 0.28 },
+        { x: width * 0.5, y: height * 0.37 },
+      ],
     };
   }
 
-  bottom1121(width: number, height: number) {
+  bottom1121(width: number, height: number): FormationPositions {
     return {
       name: '1-1-2-1',
       positions: [
         { x: width * 0.5, y: height * 0.8 },
         { x: width * 0.5, y: height * 0.7 },
-        { x: width * 0.25, y: height * 0.6 },
-        { x: width * 0.75, y: height * 0.6 },
-        { x: width * 0.5, y: height * 0.55},
-      ]
+        { x: width * 0.25, y: height * 0.62 },
+        { x: width * 0.75, y: height * 0.62 },
+        { x: width * 0.5, y: height * 0.53 },
+      ],
     };
   }
 
-  getPositions(formationName: string, position) {
+  getPositions(formationName: string, position: string): FormationPositions {
     if (position === 'top') {
-      return this.positionsTop.find(fp => fp.name === formationName);
+      return this.positionsTop.find((fp) => fp.name === formationName);
     }
-    return this.positionsBottom.find(fp => fp.name === formationName);
+    return this.positionsBottom.find((fp) => fp.name === formationName);
   }
 }

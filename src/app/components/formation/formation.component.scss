@@ -1,3 +1,5 @@
+@import "../../styles/_mixins.scss";
+
 .formation {
     background: var(--ion-color-white);
     border-radius: 5%;
@@ -5,20 +7,12 @@
 }
 
 .selected {
-    border: 0.4rem solid var(--ion-color-white);
+    @include custom-border(0.1rem, true);
     opacity: 1;
+    padding: 0.25rem;
 }
 
-.d-flex {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-
-    span {
-        margin-left: 1rem;
-    }
-}
-
-.rotate {
-    transform: rotate(180deg);
+ion-label {
+    font-size: 2rem;
+    color: var(--ion-color-black) !important;
 }

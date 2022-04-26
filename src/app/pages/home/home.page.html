@@ -1,8 +1,8 @@
-<app-panel [playerOptions]="true"></app-panel>
 <ion-content [class]="courtTheme.cssClass" [scrollY]="false">
   <app-court>
-    <app-player [cssClass]="playerThemeTeamA.cssClass" *ngFor="let player of teamA.positions" [x]="player.x" [y]="player.y"></app-player>
-    <app-player [cssClass]="playerThemeTeamB.cssClass" *ngFor="let player of teamB.positions" [x]="player.x" [y]="player.y"></app-player>
+    <app-player [goalkeeper]="player.goalkeeper" [cssClass]="playerThemeTeamA.cssClass" *ngFor="let player of teamA.positions" [x]="player.x" [y]="player.y"></app-player>
+    <app-player [goalkeeper]="player.goalkeeper" [cssClass]="playerThemeTeamB.cssClass" *ngFor="let player of teamB.positions" [x]="player.x" [y]="player.y"></app-player>
+    <app-draw-scratch></app-draw-scratch>
   </app-court>
 </ion-content>
 <app-panel></app-panel>
