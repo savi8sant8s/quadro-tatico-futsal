@@ -25,11 +25,15 @@ export class PlayerThemeComponent {
   onSelect(team: string, playerTheme: Theme): void {
     let teamId: TeamId;
     if (team === 'a') {
-      this.playerThemeTeamA = playerTheme;
-      teamId = TeamId.a;
+      if (this.playerThemeTeamB.cssClass !== playerTheme.cssClass) {
+        this.playerThemeTeamA = playerTheme;
+        teamId = TeamId.a;
+      }
     } else if (team === 'b') {
-      this.playerThemeTeamB = playerTheme;
-      teamId = TeamId.b;
+      if (this.playerThemeTeamA.cssClass !== playerTheme.cssClass) {
+        this.playerThemeTeamB = playerTheme;
+        teamId = TeamId.b;
+      }
     }
     this.playerThemeService.setPlayerThemePreferences(teamId, playerTheme);
   }

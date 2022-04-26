@@ -7,10 +7,11 @@
 }
 
 .selected {
-    @include custom-white-border(0.4rem);
+    @include custom-border(0.1rem, true);
     opacity: 1;
 }
 
-.rotate {
-    transform: rotate(180deg);
+ion-label {
+    font-size: 2rem;
+    color: var(--ion-color-black) !important;
 }

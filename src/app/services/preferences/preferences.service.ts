@@ -29,12 +29,10 @@ export class PreferencesService {
   async setDefaultFormations(): Promise<void> {
     const teamAFormation: Formation = {
       name: '1-2-2',
-      imageUrl: 'assets/formation/1-2-2.svg',
     };
     await Storage.set({ key: 'team-a-formation', value: JSON.stringify(teamAFormation) });
     const teamBFormation: Formation = {
       name: '1-2-2',
-      imageUrl: 'assets/formation/1-2-2.svg',
     };
     await Storage.set({ key: 'team-b-formation', value: JSON.stringify(teamBFormation) });
   }

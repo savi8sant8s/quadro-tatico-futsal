@@ -1,5 +1,5 @@
 @import "../../styles/_mixins.scss";
 
 ion-content {
-  @include custom-white-border(0.25rem);
+  @include custom-border(0.25rem);
 }

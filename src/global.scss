@@ -59,18 +59,10 @@ ion-icon {
         background: var(--ion-color-orange);
     }
     &-4{
-        --background: var(--ion-color-black);
-        background: var(--ion-color-black);
-    }
-    &-5{
         --background: var(--ion-color-gray);
         background: var(--ion-color-gray);
     }
-    &-6{
-        --background: var(--ion-color-black);
-        background: var(--ion-color-black);
-    }
-    &-7{
+    &-5{
         --background: var(--ion-color-white);
         background: var(--ion-color-white);
     }
@@ -78,19 +70,19 @@ ion-icon {
 
 .player-theme {
     &-1 {
-        background: var(--ion-color-green);
-        @include custom-white-border(0.2rem);
+        background: var(--ion-color-special-green);
+        @include custom-border(0.2rem);
     }
     &-2 {
-        background: var(--ion-color-yellow);
-        @include custom-white-border(0.2rem);
+        background: var(--ion-color-special-yellow);
+        @include custom-border(0.2rem);
     }
     &-3 {
-        background: var(--ion-color-orange);
-        @include custom-white-border(0.2rem);
+        background: var(--ion-color-special-blue);
+        @include custom-border(0.2rem);
     }
     &-4 {
-        background: var(--ion-color-black);
-        @include custom-white-border(0.2rem);
+        background: var(--ion-color-special-red);
+        @include custom-border(0.2rem);
     }
 }

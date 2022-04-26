@@ -12,10 +12,10 @@ export class FormationService {
   private formations: Formation[] = new Array<Formation>();
 
   constructor(private eventsService: EventsService) {
-    this.formations.push({ name: '1-2-2', imageUrl: 'assets/formation/1-2-2.svg' });
-    this.formations.push({ name: '1-3-1', imageUrl: 'assets/formation/1-3-1.svg' });
-    this.formations.push({ name: '1-1-2-1', imageUrl: 'assets/formation/1-1-2-1.svg' });
-    this.formations.push({ name: '1-1-1-2', imageUrl: 'assets/formation/1-1-1-2.svg' });
+    this.formations.push({ name: '1-2-2' });
+    this.formations.push({ name: '1-3-1' });
+    this.formations.push({ name: '1-1-2-1' });
+    this.formations.push({ name: '1-1-1-2' });
   }
 
   getFormations(): Formation[] {

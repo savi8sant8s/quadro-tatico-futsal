@@ -33,7 +33,7 @@ export class PositionsService {
     return {
       name: '1-2-2',
       positions: [
-        { x: width * 0.5, y: height * 0.1, goalkeeper: true },
+        { x: width * 0.5, y: height * 0.1 },
         { x: width * 0.25, y: height * 0.2 },
         { x: width * 0.75, y: height * 0.2 },
         { x: width * 0.25, y: height * 0.35 },
@@ -46,7 +46,7 @@ export class PositionsService {
     return {
       name: '1-2-2',
       positions: [
-        { x: width * 0.5, y: height * 0.8, goalkeeper: true },
+        { x: width * 0.5, y: height * 0.8 },
         { x: width * 0.25, y: height * 0.7 },
         { x: width * 0.75, y: height * 0.7 },
         { x: width * 0.25, y: height * 0.55 },
@@ -59,7 +59,7 @@ export class PositionsService {
     return {
       name: '1-3-1',
       positions: [
-        { x: width * 0.5, y: height * 0.1, goalkeeper: true },
+        { x: width * 0.5, y: height * 0.1 },
         { x: width * 0.25, y: height * 0.2 },
         { x: width * 0.5, y: height * 0.2 },
         { x: width * 0.75, y: height * 0.2 },
@@ -72,10 +72,10 @@ export class PositionsService {
     return {
       name: '1-3-1',
       positions: [
-        { x: width * 0.5, y: height * 0.8, goalkeeper: true },
-        { x: width * 0.25, y: height * 0.65 },
-        { x: width * 0.5, y: height * 0.65 },
-        { x: width * 0.75, y: height * 0.65 },
+        { x: width * 0.5, y: height * 0.8 },
+        { x: width * 0.25, y: height * 0.7 },
+        { x: width * 0.5, y: height * 0.7 },
+        { x: width * 0.75, y: height * 0.7 },
         { x: width * 0.5, y: height * 0.55 },
       ],
     };
@@ -85,7 +85,7 @@ export class PositionsService {
     return {
       name: '1-1-1-2',
       positions: [
-        { x: width * 0.5, y: height * 0.1, goalkeeper: true },
+        { x: width * 0.5, y: height * 0.1 },
         { x: width * 0.5, y: height * 0.2 },
         { x: width * 0.5, y: height * 0.3 },
         { x: width * 0.25, y: height * 0.37 },
@@ -98,11 +98,11 @@ export class PositionsService {
     return {
       name: '1-1-1-2',
       positions: [
-        { x: width * 0.5, y: height * 0.8, goalkeeper: true },
-        { x: width * 0.5, y: height * 0.67 },
-        { x: width * 0.5, y: height * 0.57 },
-        { x: width * 0.25, y: height * 0.5 },
-        { x: width * 0.75, y: height * 0.5 },
+        { x: width * 0.5, y: height * 0.8 },
+        { x: width * 0.5, y: height * 0.7 },
+        { x: width * 0.5, y: height * 0.6 },
+        { x: width * 0.25, y: height * 0.52 },
+        { x: width * 0.75, y: height * 0.52 },
       ],
     };
   }
@@ -111,11 +111,11 @@ export class PositionsService {
     return {
       name: '1-1-2-1',
       positions: [
-        { x: width * 0.5, y: height * 0.1, goalkeeper: true },
+        { x: width * 0.5, y: height * 0.1 },
         { x: width * 0.5, y: height * 0.2 },
-        { x: width * 0.25, y: height * 0.25 },
-        { x: width * 0.75, y: height * 0.25 },
-        { x: width * 0.5, y: height * 0.35 },
+        { x: width * 0.25, y: height * 0.28 },
+        { x: width * 0.75, y: height * 0.28 },
+        { x: width * 0.5, y: height * 0.37 },
       ],
     };
   }
@@ -124,11 +124,11 @@ export class PositionsService {
     return {
       name: '1-1-2-1',
       positions: [
-        { x: width * 0.5, y: height * 0.8, goalkeeper: true },
-        { x: width * 0.5, y: height * 0.67 },
-        { x: width * 0.25, y: height * 0.6 },
-        { x: width * 0.75, y: height * 0.6 },
-        { x: width * 0.5, y: height * 0.52 },
+        { x: width * 0.5, y: height * 0.8 },
+        { x: width * 0.5, y: height * 0.7 },
+        { x: width * 0.25, y: height * 0.62 },
+        { x: width * 0.75, y: height * 0.62 },
+        { x: width * 0.5, y: height * 0.53 },
       ],
     };
   }

@@ -13,6 +13,7 @@ export class DrawScratchComponent implements AfterViewInit {
   lastY: number;
   color = 'white';
   brushSize = 5;
+  drawing = false;
 
   constructor(private platform: Platform, private renderer: Renderer2) {}
 
@@ -23,6 +24,7 @@ export class DrawScratchComponent implements AfterViewInit {
   }
 
   handleStart(ev) {
+    this.drawing = true;
     this.lastX = ev.touches[0].pageX;
     this.lastY = ev.touches[0].pageY;
   }
@@ -44,7 +46,8 @@ export class DrawScratchComponent implements AfterViewInit {
     this.lastY = currentY;
   }
 
-  onClear(){
+  onClear() {
+    this.drawing = false;
     const ctx = this.canvasElement.getContext('2d');
     ctx.clearRect(0, 0, this.canvasElement.width, this.canvasElement.height);
   }
