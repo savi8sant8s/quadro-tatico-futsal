@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { App } from '@capacitor/app';
 import { SplashScreen } from '@capacitor/splash-screen';
 import { ModalController, Platform } from '@ionic/angular';
-
 import { PreferencesService } from './services';
 @Component({
   selector: 'app-root',
@@ -15,6 +14,7 @@ export class AppComponent {
       await this.preferences.setDefaultPreferences();
       SplashScreen.hide({ fadeOutDuration: 0 });
       this.backButtonEvent();
+      window.screen.orientation.lock('portrait');
     });
   }
 

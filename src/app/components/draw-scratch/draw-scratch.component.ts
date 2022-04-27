@@ -24,12 +24,12 @@ export class DrawScratchComponent implements AfterViewInit {
   }
 
   handleStart(ev) {
-    this.drawing = true;
     this.lastX = ev.touches[0].pageX;
     this.lastY = ev.touches[0].pageY;
   }
 
   handleMove(ev) {
+    this.drawing = true;
     const ctx = this.canvasElement.getContext('2d');
     const currentX = ev.touches[0].pageX;
     const currentY = ev.touches[0].pageY;
