@@ -31,3 +31,6 @@ npm-debug.log*
 /plugins
 /www
 /android
+
+keystore.jks
+keystore.txt
