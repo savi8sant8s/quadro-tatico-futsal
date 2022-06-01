@@ -5,6 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 
 import { LanguagesService } from '../../services';
 import { Language } from '../../types';
+import { Share } from '@capacitor/share';
 
 @Component({
   selector: 'app-more',
@@ -44,6 +45,19 @@ export class MoreComponent {
     const currentLanguage = this.languageSelected.code;
     const urlTerms = `https://github.com/prancheta-apps/termos/blob/main/quadro-tatico-futsal-${currentLanguage}.md`;
     this.iab.create(urlTerms, '_system');
+  }
+
+  async onShare(): Promise<void> {
+    const title = await this.translateService.get('SHARE_TITLE').toPromise();
+    const text = await this.translateService.get('SHARE_MESSAGE').toPromise();
+    const url = 'https://play.google.com/store/apps/details?id=com.prancheta.quadrotaticodefutsal';
+    const dialogTitle = await this.translateService.get('SHARE').toPromise();
+
+    await Share.share({ title, text, url, dialogTitle });
+  }
+
+  onRate(): void {
+    this.iab.create('https://play.google.com/store/apps/details?id=com.prancheta.quadrotaticodefutsal', '_system');
   }
 
   onContactUs(): void {

@@ -2,7 +2,7 @@
   <app-back-modal></app-back-modal>
   <div class="ion-text-center">
     <h1>{{'APP_TITLE' | translate}}</h1>
-    <img width="50%" src="assets/logo.png"/>
+    <img width="30%" src="assets/logo.png"/>
     <br>
     <ion-note>1.0.0</ion-note>
   </div>
@@ -18,10 +18,16 @@
       <ion-icon size="small" class="white-icon" name="document-text-outline"></ion-icon>
     </ion-badge>
   </ion-item>
-  <ion-item color="none" lines="none" class="ion-margin-top">
-    <ion-label>{{'PRO_VERSION_TITLE' | translate}}</ion-label>
+  <ion-item (click)="onRate()" color="none" lines="none" class="ion-margin-top">
+    <ion-label>{{'RATE' | translate}}</ion-label>
     <ion-badge color="warning" slot="end">
-      <ion-icon size="small" class="white-icon" name="logo-android"></ion-icon>
+      <ion-icon size="small" class="white-icon" name="star-outline"></ion-icon>
+    </ion-badge>
+  </ion-item>
+  <ion-item (click)="onShare()" color="none" lines="none" class="ion-margin-top">
+    <ion-label>{{'SHARE' | translate}}</ion-label>
+    <ion-badge color="secondary" slot="end">
+      <ion-icon size="small" class="white-icon" name="share-social-outline"></ion-icon>
     </ion-badge>
   </ion-item>
   <ion-item (click)="onContactUs()" color="none" lines="none" class="ion-margin-top">
