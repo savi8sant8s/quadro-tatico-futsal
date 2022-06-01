@@ -11,5 +11,9 @@
     "CONFIRM": "Confirmar",
     "CANCEL": "Cancelar",
     "QUIT": "Salir",
-    "CONTACT_US": "Contáctenos"
+    "CONTACT_US": "Contáctenos",
+    "SHARE": "Compartir app",
+    "RATE": "Valorar app",
+    "SHARE_TITLE": "App: Tablero Tactico de Futsal",
+    "SHARE_MESSAGE": "Con tu propio móvil podrás gestionar tu equipo amateur o profesional."
 }

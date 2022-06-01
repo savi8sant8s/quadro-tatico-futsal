@@ -11,5 +11,9 @@
     "CONFIRM": "Confirm",
     "CANCEL": "Cancel",
     "QUIT": "Quit",
-    "CONTACT_US": "Contact us"
+    "CONTACT_US": "Contact us",
+    "SHARE": "Share the app",
+    "RATE": "Rate the app",
+    "SHARE_TITLE": "App: Futsal Tactical Board",
+    "SHARE_MESSAGE": "With your own mobile you can manage your amateur or professional team."
 }
