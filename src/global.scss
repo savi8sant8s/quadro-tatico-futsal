@@ -72,17 +72,21 @@ ion-icon {
     &-1 {
         background: var(--ion-color-special-green);
         @include custom-border(0.2rem);
+        filter: drop-shadow(0.01rem 0.25rem 0.025rem var(--ion-color-special-green));
     }
     &-2 {
         background: var(--ion-color-special-yellow);
         @include custom-border(0.2rem);
+        filter: drop-shadow(0.01rem 0.25rem 0.025rem var(--ion-color-special-yellow));
     }
     &-3 {
         background: var(--ion-color-special-blue);
         @include custom-border(0.2rem);
+        filter: drop-shadow(0.01rem 0.25rem 0.025rem var(--ion-color-special-blue));
     }
     &-4 {
         background: var(--ion-color-special-red);
         @include custom-border(0.2rem);
+        filter: drop-shadow(0.01rem 0.25rem 0.025rem var(--ion-color-special-red));
     }
 }
