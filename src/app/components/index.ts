@@ -7,3 +7,4 @@ export * from './panel/panel.component';
 export * from './player/player.component';
 export * from './player-theme/player-theme.component';
 export * from './draw-scratch/draw-scratch.component';
+export * from './ball/ball.component';

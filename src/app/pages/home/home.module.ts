@@ -14,6 +14,7 @@ import {
   PlayerThemeComponent,
   PlayerComponent,
   DrawScratchComponent,
+  BallComponent
 } from '../../components';
 
 import { HomePageRoutingModule } from './home-routing.module';
@@ -32,6 +33,7 @@ import { HomePage } from './home.page';
     MoreComponent,
     BackModalComponent,
     DrawScratchComponent,
+    BallComponent
   ],
 })
 export class HomePageModule {}
