@@ -68,21 +68,4 @@ $dark-transparent: rgba(0,0,0,0.15);
         border-radius: 100%;
         top: 50%;
     }
-    
-    &-area-top {
-        @include circle;
-        background: var(--ion-color-white);
-        width: 0.9rem;
-        height: 0.9rem;
-        top: 11%;
-        left: 50%;
-    }
-    
-    &-area-bottom {
-        @include circle;
-        background: var(--ion-color-white);
-        width: 0.9rem;
-        height: 0.9rem;
-        top: 89%;
-    }
 }
