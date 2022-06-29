@@ -17,7 +17,7 @@ export class PanelComponent implements OnInit {
 
   ngOnInit(): void {
     this.options.push({ name: 'easel-outline', component: FormationComponent });
-    this.options.push({ name: 'football-outline', component: PlayerThemeComponent });
+    this.options.push({ name: 'person-outline', component: PlayerThemeComponent });
     this.options.push({ name: 'color-palette-outline', component: CourtThemeComponent });
     this.options.push({ name: 'save-outline', component: 'save-image' });
     this.options.push({ name: 'ellipsis-horizontal-circle-outline', component: MoreComponent });
