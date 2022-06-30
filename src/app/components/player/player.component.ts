@@ -10,12 +10,9 @@ import { Position } from '../../types';
 })
 export class PlayerComponent implements AfterViewInit {
   @ViewChild('player', { read: ElementRef }) player: ElementRef;
-  @Input() goalkeeper = false;
   @Input() x = 0;
   @Input() y = 0;
   @Input() cssClass = 'player-theme-1';
-  lastOnStart = 0;
-  doubleClickTheshold = 500;
 
   constructor(private gestureCtrl: GestureController, private domCtrl: DomController, private platform: Platform) {}
 

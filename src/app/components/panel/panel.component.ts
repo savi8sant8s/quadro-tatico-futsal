@@ -4,7 +4,6 @@ import { ModalController } from '@ionic/angular';
 
 import { CourtThemeComponent, FormationComponent, MoreComponent, PlayerThemeComponent } from '../../components';
 import { Option } from '../../types';
-
 @Component({
   selector: 'app-panel',
   templateUrl: './panel.component.html',
@@ -17,7 +16,7 @@ export class PanelComponent implements OnInit {
 
   ngOnInit(): void {
     this.options.push({ name: 'easel-outline', component: FormationComponent });
-    this.options.push({ name: 'football-outline', component: PlayerThemeComponent });
+    this.options.push({ name: 'person-outline', component: PlayerThemeComponent });
     this.options.push({ name: 'color-palette-outline', component: CourtThemeComponent });
     this.options.push({ name: 'ellipsis-horizontal-circle-outline', component: MoreComponent });
   }

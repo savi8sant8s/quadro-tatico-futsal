@@ -1,0 +1,13 @@
+@import "../../styles/_mixins.scss";
+
+.ball {
+    background: var(--ion-color-black);
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 100%;
+    @include d-flex(center);
+    z-index: 20;
+}
