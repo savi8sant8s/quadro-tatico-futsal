@@ -43,7 +43,7 @@ export class MoreComponent {
 
   onOpenTerms(): void {
     const currentLanguage = this.languageSelected.code;
-    const urlTerms = `https://github.com/prancheta-apps/termos/blob/main/quadro-tatico-futsal-${currentLanguage}.md`;
+    const urlTerms = `https://github.com/savi8sant8s/termos/blob/main/quadro-tatico-futsal-${currentLanguage}.md`;
     this.iab.create(urlTerms, '_system');
   }
 
